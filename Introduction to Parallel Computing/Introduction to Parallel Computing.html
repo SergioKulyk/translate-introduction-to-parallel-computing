@@ -1,7 +1,7 @@
 
 <!-- saved from url=(0051)https://computing.llnl.gov/tutorials/parallel_comp/ -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Introduction to Parallel Computing</title>
+<title>Вступ до паралельних обчислень</title>
 
 <script language="JavaScript" src="./Introduction to Parallel Computing_files/tutorials.js.Без названия"></script>
 <link rel="StyleSheet" href="./Introduction to Parallel Computing_files/tutorials.css" type="text/css">
@@ -30,7 +30,7 @@ Department of Energy">
 <script src="./Introduction to Parallel Computing_files/piwik.js.Без названия" type="text/javascript">
 </script>
 <script>
-var siteName = document.domain;
+var siteName = 1-.domain;
 var pkBaseURL = 'https://analytics.llnl.gov/';
 if (typeof jQuery=="undefined") {
     document.write(unescape("%3Cscript src='" + pkBaseURL + "jquery.js' type='text/javascript'%3E%3C/script%3E"));
@@ -57,79 +57,79 @@ if (typeof jQuery=="undefined") {
   <table cellpadding="0" cellspacing="0" width="900">
   <tbody><tr><td background="./Introduction to Parallel Computing_files/bg1.gif">
   <a name="top"> </a>
-  <script language="JavaScript">addNavigation()</script>   <table border="0"><tbody><tr align="center" valign="center">    <td><font size="-1" face="arial">    <a href="https://computing.llnl.gov/training#training_materials">Tutorials</a></font></td>    <td><b>|</b></td>   <td><font size="-1" face="arial">    <a href="https://computing.llnl.gov/tutorials/exercises/index.html">Exercises</a></font></td>    <td><b>|</b></td>   <td><font size="-1" face="arial">    <a href="https://computing.llnl.gov/tutorials/abstracts/index.html">Abstracts</a></font></td>    <td><b>|</b></td>   <td><font size="-1" face="arial">    <a href="https://computing.llnl.gov/training#workshops">LC&nbsp;Workshops</a></font></td>    <td><b>|</b></td>   <td><font size="-1" face="arial">    <a href="https://computing.llnl.gov/tutorials/misc/comments.html">Comments</a></font></td>    <td><b>|</b></td>   <td><font size="-1" face="arial">    <a href="https://computing.llnl.gov/tutorials/search/index.html">Search</a></font></td>    <td><b>|</b></td>   <td><font size="-1" face="arial">   <a href="http://www.llnl.gov/disclaimer.html" target="W2">   Privacy &amp; Legal Notice</a></font></td>   </tr></tbody></table>   
+  <script language="JavaScript">addNavigation()</script>   <table border="0"><tbody><tr align="center" valign="center">    <td><font size="-1" face="arial">    <a href="https://computing.llnl.gov/training#training_materials">Навчальні посібники</a></font></td>    <td><b>|</b></td>   <td><font size="-1" face="arial">    <a href="https://computing.llnl.gov/tutorials/exercises/index.html">Вправи</a></font></td>    <td><b>|</b></td>   <td><font size="-1" face="arial">    <a href="https://computing.llnl.gov/tutorials/abstracts/index.html">Реферати</a></font></td>    <td><b>|</b></td>   <td><font size="-1" face="arial">    <a href="https://computing.llnl.gov/training#workshops">Магазин робіт</a></font></td>    <td><b>|</b></td>   <td><font size="-1" face="arial">    <a href="https://computing.llnl.gov/tutorials/misc/comments.html">Коментарі</a></font></td>    <td><b>|</b></td>   <td><font size="-1" face="arial">    <a href="https://computing.llnl.gov/tutorials/search/index.html">Пошук</a></font></td>    <td><b>|</b></td>   <td><font size="-1" face="arial">   <a href="http://www.llnl.gov/disclaimer.html" target="W2">   Конфіденційність</a></font></td>   </tr></tbody></table>   
   <p><br>
-  </p><h1>Introduction to Parallel Computing</h1>
+  </p><h1>Вступ до паралельних обчислень</h1>
   <p>
   </p></td></tr></tbody></table>
 </td>
 </tr><tr valign="top">
-<td><i>Author: Blaise Barney, Lawrence Livermore National Laboratory</i></td>
+<td><i>Автори: Блейз Барні, Національна лабораторія ім. Лоуренса Лівермора</i></td>
 <td align="right"><font size="-1">UCRL-MI-133316</font></td>
 </tr></tbody></table>
 <p>
 
 <a name="TOC"> </a>
-</p><h2>Table of Contents</h2>
+</p><h2>Зміст</h2>
 <ol>
-<li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#Abstract">Abstract</a>
-</li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#Overview">Overview</a>
+<li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#Abstract">Навчальні посібники</a>
+</li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#Overview">Огляд</a>
     <ol>
-    <li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#Whatis">What is Parallel Computing?</a>
-    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#WhyUse">Why Use Parallel Computing?</a>
-    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#Who">Who is Using Parallel Computing?</a>
+    <li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#Whatis">Що таке паралельні обчислення?</a>
+    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#WhyUse">Навіщо використовувати паралельні обчислення?</a>
+    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#Who">Хто використовує паралельні обчислення?</a>
     </li></ol>
 
-</li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#Concepts">Concepts and Terminology</a>
+</li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#Concepts">Поняття та термінології</a>
     <ol>
-    <li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#Neumann">von Neumann Computer Architecture</a>
-    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#Flynn">Flynn's Classical Taxonomy</a>
-    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#Terminology">Some General Parallel Terminology</a>
-    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#LimitsCosts">Limits and Costs of Parallel Programming</a> 
+    <li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#Neumann">Архітектурою комп'ютерної системи Неймана</a>
+    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#Flynn">Класична таксономія Флінна</a>
+    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#Terminology">Деяка загальна паралельна термінологія</a>
+    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#LimitsCosts">Межі та витрати паралельного програмування</a> 
 </li></ol>
 
-</li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#MemoryArch">Parallel Computer Memory Architectures</a> 
+</li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#MemoryArch">Паралельні архітектури пам'яті комп'ютера</a> 
     <ol>
-    <li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#SharedMemory">Shared Memory</a> 
-    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#DistributedMemory">Distributed Memory</a> 
-    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#HybridMemory">Hybrid Distributed-Shared Memory</a>
+    <li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#SharedMemory">Спільна пам'ять</a> 
+    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#DistributedMemory">Розподілена пам'ять</a> 
+    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#HybridMemory">Гібридна розподілена загальна пам'ять</a>
     </li></ol>
  
-</li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#Models">Parallel Programming Models</a>
+</li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#Models">Моделі паралельного програмування</a>
     <ol>
-    <li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#ModelsOverview">Overview</a>
-    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#ModelsShared">Shared Memory Model</a> 
-    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#ModelsThreads">Threads Model</a>
-    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#ModelsMessage">Distributed Memory / Message Passing Model</a>
-    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#ModelsData">Data Parallel Model</a>
-    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#Hybrid">Hybrid Model</a>
-    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#SPMD-MPMD">SPMD and MPMP</a>
+    <li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#ModelsOverview">Огляд</a>
+    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#ModelsShared">Модель спільної пам'яті</a> 
+    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#ModelsThreads">Моделі ниток</a>
+    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#ModelsMessage">Модель пропущеної пам'яті / повідомлення</a>
+    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#ModelsData">Паралельна модель даних</a>
+    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#Hybrid">Гібридна модель</a>
+    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#SPMD-MPMD">SPMD та MPMP</a>
     </li></ol>
 
-</li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#Designing">Designing Parallel Programs</a>
+</li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#Designing">Розробка паралельних програм</a>
     <ol>
-    <li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#DesignAutomatic">Automatic vs. Manual Parallelization</a>
-    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#DesignUnderstand">Understand the Problem and the Program</a>
-    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#DesignPartitioning">Partitioning</a> 
-    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#DesignCommunications">Communications</a> 
-    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#DesignSynchronization">Synchronization</a>
-    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#DesignDependencies">Data Dependencies</a>
-    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#DesignLoadBalance">Load Balancing</a> 
-    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#DesignGranularity">Granularity</a> 
+    <li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#DesignAutomatic">Автоматична або паралелізація вручну</a>
+    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#DesignUnderstand">Зрозуміння проблем та програм</a>
+    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#DesignPartitioning">Розбиття</a> 
+    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#DesignCommunications">Зв'язок</a> 
+    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#DesignSynchronization">Синхронізація</a>
+    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#DesignDependencies">Залежності даних</a>
+    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#DesignLoadBalance">Балансування навантаження</a> 
+    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#DesignGranularity">Гранулярність</a> 
     </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#DesignIO">I/O</a>
-    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#DesignDebug">Debugging</a>
-    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#DesignPerformance">Performance Analysis and Tuning</a>
+    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#DesignDebug">Налагодження</a>
+    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#DesignPerformance">Аналіз продуктивності та настройка</a>
     </li></ol>
 
-</li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#Examples">Parallel Examples</a> 
+</li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#Examples">Паралельні приклади</a> 
     <ol>
-    <li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#ExamplesArray">Array Processing</a>
-    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#ExamplesPI">PI Calculation</a> 
-    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#ExamplesHeat">Simple Heat Equation</a> 
-    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#ExamplesWave">1-D Wave Equation</a>
+    <li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#ExamplesArray">Обробка масивів</a>
+    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#ExamplesPI">Розрахунок PI</a> 
+    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#ExamplesHeat">Просте рівняння тепла</a> 
+    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#ExamplesWave">1-D хвильове рівняння</a>
     </li></ol>
 
-</li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#References">References and More Information</a>
+</li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#References">Довідники та додаткова інформація</a>
 </li></ol>
  
 <!--========================================================================-->
@@ -137,11 +137,11 @@ if (typeof jQuery=="undefined") {
 <a name="Abstract"> <br><br> </a>
 <table border="1" cellpadding="5" cellspacing="0" width="100%">
 <tbody><tr><td bgcolor="#98ABCE">
-<span class="heading1">Abstract</span></td>
+<span class="heading1">Навчальні посібники</span></td>
 </tr></tbody></table>
 <p><br>
  
-This is the first tutorial in the "Livermore Computing Getting Started" workshop. It is intended to provide only a very quick overview of the extensive and broad topic of Parallel Computing, as a lead-in for the tutorials that follow it.  As such, it covers just the very basics of parallel computing, and is intended for someone who is just becoming acquainted with the subject and who is planning to attend one or more of the other tutorials in this workshop. It is not intended to cover Parallel Programming in depth, as this would require significantly more time. The tutorial begins with a discussion on parallel computing - what it is and how it's used, followed by a discussion on concepts and terminology associated with parallel computing. The topics of parallel memory architectures and programming models are then explored. These topics are followed by a series of practical discussions on a number of the complex issues related to designing and running parallel programs. The tutorial concludes with several examples of how to parallelize simple serial programs. 
+Це перший навчальний посібник у семінарі "Лівермор Комп'ютер". Він має на меті забезпечити лише дуже короткий огляд широкої та широкої теми паралельних обчислень, як провідний для підручників, які слідують за нею. Таким чином, він охоплює лише основи паралельних обчислень і призначений для того, хто просто хочу ознайомиться з предметом і хто планує відвідувати один або декілька інших підручників у цьому семінарі. Він не має на меті поширювати глибоке паралельне програмування, оскільки це вимагатиме значно більше часу. Навчальний посібник починається з обговорення паралельних обчислень - що це таке, як він використовується, а потім обговорення концепцій та термінів, пов'язаних з паралельними обчисленнями. Потім досліджуються теми архітектур паралельної пам'яті та моделей програмування. За цими темами йде низка практичних обговорень з ряду складних питань, пов'язаних із розробкою та виконанням паралельних програм. Підручник завершується декількома прикладами паралелізації простих серійних програм.
 <br><br>
 
 <!--========================================================================-->
@@ -150,105 +150,97 @@ This is the first tutorial in the "Livermore Computing Getting Started" workshop
 <a name="Whatis"> </a>
 <table border="1" cellpadding="5" cellspacing="0" width="100%">
 <tbody><tr><td bgcolor="#98ABCE">
-<span class="heading1">Overview</span></td>
+<span class="heading1">Огляд</span></td>
 </tr></tbody></table>
-</p><h2>What is Parallel Computing?</h2>
+</p><h2>Що таке паралельні обчислення?</h2>
 
 <img src="./Introduction to Parallel Computing_files/arrowBullet.gif" align="top" hspace="3">
-<span class="heading3">Serial Computing:</span>
+<span class="heading3">Серійний обчислення:</span>
 <ul>
 <p>
-</p><li>Traditionally, software has been written for <b><i>serial</i></b>  
-    computation:
+</p><li>Традиційно для  <b><i>серійного</i></b>  обчислення було написано програмне забезпечення:
     <ul>
-    <li>A problem is broken into a discrete series of instructions
-    </li><li>Instructions are executed sequentially one after another
-    </li><li>Executed on a single processor
-    </li><li>Only one instruction may execute at any moment in time
+    <li>Проблема розбита на дискретну серію інструкцій
+    </li><li>Інструкції виконуються послідовно один за одним
+    </li><li>Виконано на одному процесорі
+    </li><li>Тільки одна команда може виконуватись в будь-який момент часу
     </li></ul>
 <p>
 <img src="./Introduction to Parallel Computing_files/serialProblem.gif" width="604" height="250" border="1" alt="Serial computing">
 </p><p>
-<b>For example:</b>
+<b>Наприклад:</b>
 </p><p>
 <img src="./Introduction to Parallel Computing_files/serialProblem2.gif" width="604" height="250" border="1" alt="Serial computing">
 </p></li></ul>
 <p>
 
 <img src="./Introduction to Parallel Computing_files/arrowBullet.gif" align="top" hspace="3">
-<span class="heading3">Parallel Computing:</span>
+<span class="heading3">Паралельні обчислення:</span>
 </p><ul>
-<li>In the simplest sense, <b><i>parallel computing</i></b> is the simultaneous 
-    use of multiple compute resources to solve a computational problem:
+<li>У найпростішому сенсі, <b><i>паралельні обчислення</i></b> - це одночасне використання кількох обчислювальних ресурсів для вирішення обчислювальної задачі:
     <ul>
-    <li>A problem is broken into discrete parts that can be solved concurrently
-    </li><li>Each part is further broken down to a series of instructions
-    </li><li>Instructions from each part execute simultaneously on different processors
-    </li><li>An overall control/coordination mechanism is employed 
+    <li>Проблема розбита на окремі частини, які можна вирішити одночасно
+    </li><li>Кожна частина далі розбита на ряд інструкцій
+    </li><li>Інструкції з кожної частини виконуються одночасно на різних процесорах
+    </li><li>Використовується загальний механізм контролю / координації
     </li></ul>
 <p>
 <img src="./Introduction to Parallel Computing_files/parallelProblem.gif" width="683" height="372" border="1" alt="Parallel computing">
 </p><p>
-<b>For example:</b>
+<b>Наприклад:</b>
 </p><p>
 <img src="./Introduction to Parallel Computing_files/parallelProblem2.gif" width="683" height="372" border="1" alt="Parallel computing">
 </p><p>
-</p></li><li>The computational problem should be able to: 
+</p></li><li>Обчислювальна проблема повинна бути в змозі:
     <ul>
-    <li>Be broken apart into discrete pieces of work that can be solved 
-        simultaneously;
-    </li><li>Execute multiple program instructions at any moment in time;
-    </li><li>Be solved in less time with multiple compute resources than with a single 
-        compute resource.
+    <li>Розбиті на окремі частини задачі, які можна вирішити одночасно;
+    </li><li>Виконати декілька інструкцій програми в будь-який момент часу;
+    </li><li>Вирішуватиметься в менший проміжок часу за допомогою кількох обчислювальних ресурсів, ніж з єдиним обчислювальним ресурсом.
     </li></ul>
 <p>
-</p></li><li>The compute resources are typically:
+</p></li><li>Обчислювальні ресурси зазвичай:
     <ul>
-    <li>A single computer with multiple processors/cores
-    </li><li>An arbitrary number of such computers connected by a network
+    <li>Єдиний комп'ютер з декількома процесорами / ядрами
+    </li><li>Довільне число таких комп'ютерів, з'єднаних мережею
     </li></ul>
 </li></ul>
 <p>
 
 <img src="./Introduction to Parallel Computing_files/arrowBullet.gif" align="top" hspace="3">
-<span class="heading3">Parallel Computers:</span>
+<span class="heading3">Паралельні комп'ютери:</span>
 </p><ul>
 <p>
-</p><li>Virtually all stand-alone computers today are parallel from a hardware
-    perspective:
+</p><li>Практично всі автономні комп'ютери сьогодні паралельні з апаратної перспективи:
     <ul>
-    <li>Multiple functional units (L1 cache, L2 cache, branch, prefetch, decode,
-        floating-point, graphics processing (GPU), integer, etc.)
-    </li><li>Multiple execution units/cores
-    </li><li>Multiple hardware threads
+    <li>Кілька функціональних одиниць (кеш L1, кеш-пам'ять L2, гілка, попередня вибірка, декодування, плаваюча кома, обробка графіки (графічне зображення), ціле число тощо).
+    </li><li>Кілька одиниць виконання / ядер
+    </li><li>Кілька апаратних ниток
     </li></ul>
 <p>
 <table border="0" cellspacing="0" cellpadding="0">
 <tbody><tr valign="top">
 <td align="center">
 <img src="./Introduction to Parallel Computing_files/bgqComputeChip.jpg" width="450" heigth="453">
-<br>IBM BG/Q Compute Chip with 18 cores (PU) and 16 L2 Cache units (L2) </td>
+<br>IBM BG / Q Compute Chip з 18 ядер (PU) і 16 одиниць кеш-пам'яті L2 (L2)</td>
 </tr></tbody></table>
 </p><p>
-</p></li><li>Networks connect multiple stand-alone computers (nodes) to make larger
-    parallel computer clusters.
+</p></li><li>Мережі підключають декілька автономних комп'ютерів (вузлів) для створення більших паралельних комп'ютерних кластерів.
 <p>
 <img src="./Introduction to Parallel Computing_files/nodesNetwork.gif" width="720" heigth="249">
 </p><p>
-</p></li><li>For example, the schematic below shows a typical LLNL parallel computer cluster: 
+</p></li><li>Наприклад, на схемі нижче показано типовий паралельний кластер LLNL
     <ul>
-    <li>Each compute node is a multi-processor parallel computer in itself
-    </li><li>Multiple compute nodes are networked together with an Infiniband network
-    </li><li>Special purpose nodes, also multi-processor, are used for other purposes
+    <li>Кожен обчислювальний вузол сам по собі є багатопроцесорним паралельним комп'ютером
+    </li><li>Кілька обчислювальних вузлів мережа разом з мережею Infiniband
+    </li><li>Вузли спеціального призначення, також багатопроцесорні, використовуються для інших цілей
     </li></ul>
 <p>
 <img src="./Introduction to Parallel Computing_files/parallelComputer1.gif" width="781" heigth="402">
 </p><p>
-</p></li><li>The majority of the world's large parallel computers (supercomputers)
-    are clusters of hardware produced by a handful of (mostly) well known vendors.
+</p></li><li>Більшість великих паралельних комп'ютерів у світі (суперкомп'ютерів) - це кластери апаратного забезпечення, створені декількома (в основному) відомими постачальниками.
 <p>
 <img src="./Introduction to Parallel Computing_files/top500Vendors.png">
-<br><font size="-1"><i>Source: <a href="http://top500.org/" target="_blank">Top500.org</a></i></font>
+<br><font size="-1"><i>Джерело: <a href="http://top500.org/" target="_blank">Top500.org</a></i></font>
 </p></li></ul>
 
 <!--========================================================================-->
@@ -256,24 +248,22 @@ This is the first tutorial in the "Livermore Computing Getting Started" workshop
 <a name="WhyUse"> <br><br> </a>
 <table border="1" cellpadding="5" cellspacing="0" width="100%">
 <tbody><tr><td bgcolor="#98ABCE">
-<span class="heading1">Overview</span></td>
+<span class="heading1">Огляд</span></td>
 </tr></tbody></table>
-<h2>Why Use Parallel Computing?</h2>
+<h2>Навіщо використовувати паралельні обчислення?</h2>
 
 <img src="./Introduction to Parallel Computing_files/arrowBullet.gif" align="top" hspace="3">
-<span class="heading3">The Real World is Massively Parallel:</span>
+<span class="heading3">Реальний світ масово паралельно:</span>
 <p>
 <table border="0" cellspacing="0" cellpadding="0" width="800">
 <tbody><tr valign="top">
 <td>
 <ul>
-<li>In the natural world, many complex, interrelated events are happening at the
-    same time, yet within a temporal sequence.
+<li>У природному світі багато складних, взаємопов'язаних подій відбуваються одночасно, але всередині тимчасової послідовності.
 <p>
-</p></li><li>Compared to serial computing, parallel computing is much better suited for
-    modeling, simulating and understanding complex, real world phenomena.
+</p></li><li>Порівняно з послідовним обчисленням, паралельні обчислення набагато краще підходять для моделювання, моделювання та розуміння складних, реальних явищ.
 <p>
-</p></li><li>For example, imagine modeling these serially:
+</p></li><li>Наприклад, уявімо собі, як моделювати їх послідовно:
 <p>
 <img src="./Introduction to Parallel Computing_files/realWorldCollage1.jpg" width="760" height="220">
 <br><img src="./Introduction to Parallel Computing_files/realWorldCollage2.jpg" width="760" height="230">
@@ -284,99 +274,83 @@ This is the first tutorial in the "Livermore Computing Getting Started" workshop
 
 
 <img src="./Introduction to Parallel Computing_files/arrowBullet.gif" align="top" hspace="3">
-<span class="heading3">Main Reasons:</span>
+<span class="heading3">Основні причини:</span>
 
 </p><p>
 <table border="0" cellpadding="0" cellspacing="0" width="700">
 <tbody><tr valign="top">
 <td><ul>
-<li><b>SAVE TIME AND/OR MONEY:</b> 
+<li><b>Зберегти час і гроші:</b> 
     <ul>
-    <li>In theory, throwing more resources at a task will shorten its time to 
-        completion, with potential cost savings. 
-    </li><li>Parallel computers can be built from cheap, commodity components.
+    <li>Теоретично, викидаючи більше ресурсів на завдання, скорочується час до завершення, з можливістю економії коштів.
+    </li><li>Паралельні комп'ютери можуть бути побудовані з дешевих, товарних компонентів.
     <p>
     <img src="./Introduction to Parallel Computing_files/timeMoney2.jpg" width="600" height="182">
     </p></li></ul>
 <p>
-</p></li><li><b>SOLVE LARGER / MORE COMPLEX PROBLEMS:</b> 
+</p></li><li><b>РОЗШИРЕННЯ ВЕЛИКИХ /  КОМПЛЕКСНИХ ПРОБЛЕМ:</b> 
     <ul>
-    <li>Many problems are so large and/or complex that it is impractical or
-        impossible to solve them on a single computer, especially given limited
-        computer memory.
-    </li><li>Example: "Grand Challenge Problems" 
-        (<a href="http://en.wikipedia.org/wiki/Grand_Challenge" target="_blank">en.wikipedia.org/wiki/Grand_Challenge</a>) requiring
-        PetaFLOPS and PetaBytes of computing resources.
-    </li><li>Example: Web search engines/databases processing millions of transactions 
-        every second
+    <li>Багато проблем настільки великі та / або складні, що непрактично або неможливо їх вирішити на одному комп'ютері, особливо з обмеженою комп'ютерною пам'яттю.
+    </li><li>Приклад: "Проблеми великих викликів 
+        (<a href="http://en.wikipedia.org/wiki/Grand_Challenge" target="_blank">en.wikipedia.org/wiki/Grand_Challenge</a>), що вимагають використання PetaFLOPS та PetaBytes обчислювальних ресурсів.
+    </li><li>Приклад: веб-пошукові машини / бази даних, що обробляють мільйони транзакцій кожну секунду.
     <p>
     <img src="./Introduction to Parallel Computing_files/biggerProblems.jpg" width="600" height="180">
     </p></li></ul>
 <p>
-</p></li><li><b>PROVIDE CONCURRENCY:</b> 
+</p></li><li><b>Впровадження паралельності:</b> 
     <ul>
-    <li>A single compute resource can only do one thing at a time. Multiple  
-        compute resources can do many things simultaneously. 
-    </li><li>Example: Collaborative Networks
-        provide a global venue where people from around the 
-        world can meet and conduct work "virtually".
+    <li>Один обчислювальний ресурс може робити лише одну річ за раз. Кілька обчислювальних ресурсів можуть робити багато речей одночасно.
+    </li><li>Приклад: спільні мережі забезпечують глобальне місце, де люди з усього світу можуть зустрічатися та працювати "практично".
     <p>
     <img src="./Introduction to Parallel Computing_files/collaborativeNetworks.jpg" width="600" height="182">
     </p></li></ul>
 <p>
-</p></li><li><b>TAKE ADVANTAGE OF NON-LOCAL RESOURCES:</b> 
+</p></li><li><b>ЗАСТОСОВУВАТИ ПЕРЕВАГУ НЕЛОКАЛЬНИХ РЕСУРСІВ:</b> 
     <ul>
-    <li>Using compute resources on a wide area network, or even the Internet when 
-        local compute resources are scarce or insufficient. Two examples below, each
-        of which has over 1.7 million contributors globally (May 2018):
-    </li><li>Example: SETI@home (<a href="http://setiathome.berkeley.edu/" target="_blank">setiathome.berkeley.edu</a>)        <!------------ Source:
+    <li>Використання обчислювальних ресурсів у широкосмуговій мережі або навіть в Інтернеті, коли локальні обчислювальні ресурси є дефіцитними або недостатніми. Нижче наведено два приклади, у кожному з яких понад 1,7 мільйонів учасників у глобальному масштабі (травень 2018 року):
+    </li><li>Приклад: SETI @ home (<a href="http://setiathome.berkeley.edu/" target="_blank">setiathome.berkeley.edu</a>)        <!------------ Source:
         <A HREF=https://boincstats.com/ TARGET=_blank>
         https://boincstats.com/</A> 
         -------------->
-    </li><li>Example: Folding@home (<a href="http://folding.stanford.edu/" target="folding">folding.stanford.edu</a>)
+    </li><li>Приклад: Folding @ home (<a href="http://folding.stanford.edu/" target="folding">folding.stanford.edu</a>)
     <p>
     <img src="./Introduction to Parallel Computing_files/SETILogo.jpg" width="600" height="122">
     </p></li></ul>
 <p>
-</p></li><li><b>MAKE BETTER USE OF UNDERLYING PARALLEL HARDWARE:</b> 
+</p></li><li><b>ЗРОБИТИ ВИКОРИСТАННЯ ПАРАМЕТРОВОГО ОБЛАДНАННЯ:</b> 
     <ul>
-    <li>Modern computers, even laptops, are parallel in architecture with
-        multiple processors/cores.
-    </li><li>Parallel software is specifically intended for parallel hardware with
-        multiple cores, threads, etc.
-    </li><li>In most cases, serial programs run on modern computers "waste" 
-        potential computing power.
+    <li>Сучасні комп'ютери, навіть ноутбуки, є паралельними в архітектурі з декількома процесорами / ядрами.
+    </li><li>Паралельне програмне забезпечення спеціально призначене для паралельних апаратних засобів з декількома ядрами, нитками тощо.
+    </li><li>У більшості випадків серійні програми запускають на сучасних комп'ютерах "відходи" потенціалу обчислювальної потужності.
     <p>
     <table border="0" cellspacing="0" cellpadding="0">
     <tbody><tr valign="top">
     <td align="center">
     <img src="./Introduction to Parallel Computing_files/xeon5600processorDie3.jpg" width="600" height="321">
-    <br>Intel Xeon processor with 6 cores and 6 L3 cache units</td>
+    <br>Процесор Intel Xeon з 6 ядер та 6 одиниць кеш-пам'яті L3</td>
     </tr></tbody></table>
     </p></li></ul>
 </li></ul>
 <p>
 
 <img src="./Introduction to Parallel Computing_files/arrowBullet.gif" align="top" hspace="3">
-<span class="heading3">The Future:</span>
+<span class="heading3">Майбутнє:</span>
 </p><ul>
-<li>During the past 20+ years, the trends indicated by ever faster
-    networks, distributed systems, and multi-processor computer architectures
-    (even at the desktop level) clearly show 
-    that <b><i>parallelism is the future of computing</i></b>.
+<li>Протягом останніх 20 років тенденції, що свідчать про все більш швидкі мережі, розподілені системи та багатопроцесорні комп'ютерні архітектури (навіть на рівні робочого столу), ясно показують, що <b><i>паралелізм - це майбутнє обчислень.</i></b>.
 <p>
-</p></li><li>In this same time period, there has been a greater than 
-    <font style="background-color: yellow"><b>500,000x</b></font>
-    increase in supercomputer performance, with no end currently in sight.
+</p></li><li>У цей же період часу спостерігалося збільшення продуктивності суперкомп'ютера більш ніж на
+    <font style="background-color: yellow"><b>500 000 хв</b></font>, 
+   і в даний час не існує кінця.
 <p>
-</p></li><li><b><i>The race is already on for Exascale Computing!</i></b>
+</p></li><li><b><i>Гонка вже працює на Exascale Computing!</i></b>
     <ul>
-    <li>Exaflop = 10<sup>18</sup> calculations per second
+    <li>Exaflop = 10<sup>18</sup> розрахунків за секунду
     </li></ul>
 </li></ul>
 <p>
 <img src="./Introduction to Parallel Computing_files/top500.1993-2018.png">
-</p><dd><font size="-1"><i>Source: <a href="http://top500.org/" target="_blank">Top500.org</a></i></font>
+</p><dd><font size="-1"><i>Джерело: <a href="http://top500.org/" target="_blank">Top500.org</a></i></font>
 </dd></td>
 </tr></tbody></table>
 
@@ -385,35 +359,32 @@ This is the first tutorial in the "Livermore Computing Getting Started" workshop
 <a name="Who"> <br><br> </a>
 <table border="1" cellpadding="5" cellspacing="0" width="100%">
 <tbody><tr><td bgcolor="#98ABCE">
-<span class="heading1">Overview</span></td>
+<span class="heading1">Огляд</span></td>
 </tr></tbody></table>
-</p><h2>Who is Using Parallel Computing?</h2>
+</p><h2>Хто використовує паралельні обчислення?</h2>
 
 <p>
 <table border="0" cellspacing="0" cellpadding="0" width="800">
 <tbody><tr valign="top">
 <td>
 <img src="./Introduction to Parallel Computing_files/arrowBullet.gif" align="top" hspace="3">
-<span class="heading3">Science and Engineering:</span>
+<span class="heading3">Наука та техніка:</span>
 <ul>
-<li>Historically, parallel computing has been considered to be 
-    "the high end of computing", and has been used to model difficult 
-    problems in many areas of science and engineering:
+<li>Історично склалося так, що паралельні обчислення вважаються "високим кінцем обчислень", і були використані для моделювання складних проблем у багатьох галузях науки та техніки:
 <table border="0" cellspacing="0" cellpadding="0">
 <tbody><tr valign="top">
 <td><ul>
-    <li>Atmosphere, Earth, Environment 
-    </li><li>Physics - applied, nuclear, particle, condensed matter, 
-        high pressure, fusion, photonics
-    </li><li>Bioscience, Biotechnology, Genetics
-    </li><li>Chemistry, Molecular Sciences
-    </li><li>Geology, Seismology
+    <li>Атмосфера, Земля, навколишнє середовище
+    </li><li>ФФізика - прикладна, ядерна, частинка, конденсована речовина, високий тиск, синтез, фотоніка
+    </li><li>Біологія, Біотехнологія, Генетика
+    </li><li>Хімія, молекулярні науки
+    </li><li>Геологія, сейсмологія
     </li></ul></td>
 <td><ul>
-    <li>Mechanical Engineering - from prosthetics to spacecraft
-    </li><li>Electrical Engineering, Circuit Design, Microelectronics    
-    </li><li>Computer Science, Mathematics
-    </li><li>Defense, Weapons
+    <li>Машинобудування - від протезування до космічних апаратів
+    </li><li>Електротехніка, схемотехніка, мікроелектроніка
+    </li><li>Комп'ютерні науки, математика
+    </li><li>Оборона, зброя
     </li></ul></td>
 </tr></tbody></table>
 <p>
@@ -422,28 +393,24 @@ This is the first tutorial in the "Livermore Computing Getting Started" workshop
 <p>
 
 <img src="./Introduction to Parallel Computing_files/arrowBullet.gif" align="top" hspace="3">
-<span class="heading3">Industrial and Commercial:</span>
+<span class="heading3">Промислові та комерційні</span>
 </p><ul>
-<li>Today, commercial applications provide an equal or greater driving 
-    force in the development of faster computers.
-    These applications require the processing of large 
-    amounts of data in sophisticated ways. For example:
+<li>Сьогодні комерційні додатки забезпечують однакову або більшу рушійну силу при розробці більш швидких комп'ютерів. Ці програми вимагають обробки великої кількості даних за допомогою складних способів. Наприклад:
 <table border="0" cellspacing="0" cellpadding="0">
 <tbody><tr valign="top">
 <td><ul>
-    <li>"Big Data", databases, data mining
-    </li><li>Artificial Intelligence (AI)
-    </li><li>Web search engines, web based business services
-    </li><li>Medical imaging and diagnosis
-    </li><li>Pharmaceutical design
+    <li>"Big Data", бази даних, виведення даних
+    </li><li>Штучний інтелект (AI)
+    </li><li>Веб-пошукові системи, веб-сервіси
+    </li><li>Медична візуалізація та діагностика
+    </li><li>Фармацевтичний дизайн
     </li></ul></td>
 <td><ul>
-    <li>Financial and economic modeling
-    </li><li>Management of national and multi-national corporations 
-    </li><li>Advanced graphics and virtual reality, particularly in the entertainment
-        industry
-    </li><li>Networked video and multi-media technologies
-    </li><li>Oil exploration
+    <li>Фінансове та економічне моделювання
+    </li><li>Управління національними та мультинаціональними корпораціями 
+    </li><li>Розвинена графіка та віртуальна реальність, особливо в індустрії розваг
+    </li><li>Мережеві відео та мультимедійні технології
+    </li><li>Пошук нафти
     </li></ul></td>
 </tr></tbody></table>
 <p>
@@ -453,24 +420,24 @@ This is the first tutorial in the "Livermore Computing Getting Started" workshop
 </tr></tbody></table>
 
 <img src="./Introduction to Parallel Computing_files/arrowBullet.gif" align="top" hspace="3">
-<span class="heading3">Global Applications:</span>
+<span class="heading3">Глобальні програми:</span>
 </p><ul>
-<li>Parallel computing is now being used extensively around the world, in a
-    wide variety of applications.
+<li>Паралельні обчислення в даний час широко використовуються у всьому світі, у різних областях застосування.
 <p>
-<img src="./Introduction to Parallel Computing_files/top500Apps.gif" width="753" height="446"><br><font size="-1"><i>Source: <a href="http://top500.org/" target="_blank">Top500.org</a></i></font><p>
+<img src="./Introduction to Parallel Computing_files/top500Apps.gif" width="753" height="446"><br><font size="-1"><i>Джерело: <a href="http://top500.org/" target="_blank">Top500.org</a></i></font><p>
 </p><table border="0" cellpadding="0" cellspacing="0">
 <tbody><tr valign="top">
 
 
-<td colspan="2">Click on images below for larger version</td>
+<td colspan="2">
+Натисніть на зображення нижче для більшої версії</td>
 </tr><tr valign="top">
 <td><a href="./Introduction to Parallel Computing_files/top500SegmentsTime.png" target="_blank">
 <img src="./Introduction to Parallel Computing_files/top500SegmentsTime.png" width="400"></a></td>
 <td><a href="./Introduction to Parallel Computing_files/top500CountriesTime.png">
 <img src="./Introduction to Parallel Computing_files/top500CountriesTime.png" target="_blank" width="400"></a></td>
 </tr></tbody></table>
-<br><font size="-1"><i>Source: <a href="http://top500.org/" target="_blank">Top500.org</a></i></font>
+<br><font size="-1"><i>Джерело: <a href="http://top500.org/" target="_blank">Top500.org</a></i></font>
 </p></li></ul>
 
 <!--========================================================================-->
@@ -479,20 +446,17 @@ This is the first tutorial in the "Livermore Computing Getting Started" workshop
 <a name="Neumann"> </a>
 <table border="1" cellpadding="5" cellspacing="0" width="100%">
 <tbody><tr><td bgcolor="#98ABCE">
-<span class="heading1">Concepts and Terminology</span></td>
+<span class="heading1">Поняття та термінологія</span></td>
 </tr></tbody></table>
-<h2>von Neumann Architecture</h2>
+<h2>за архітектурою Неймана</h2>
 
 <ul>
 <p>
-</p><li>Named after the Hungarian mathematician/genius John von Neumann who first
-    authored the general requirements for an electronic computer in his 1945 papers. 
+</p><li>Названий за угорським математиком / генієм Джоном фон Нейманом, який вперше створив загальні вимоги до електронного комп'ютера в своїх 1945-х роботах.
 <p>
-</p></li><li>Also known as "stored-program computer" - both program instructions and data are 
-    kept in electronic memory.  Differs from earlier computers which were programmed  
-    through "hard wiring".
+</p></li><li>Також відомий як "Накопичувач програма" - як інструкції програми, так і дані зберігаються в електронній пам'яті.
 <p>
-</p></li><li>Since then, virtually all computers have followed this basic design: 
+</p></li><li>З тих пір практично всі комп'ютери дотримуються цього базового дизайну:
    
 </li></ul>
 <p>
@@ -500,45 +464,39 @@ This is the first tutorial in the "Livermore Computing Getting Started" workshop
 <tbody><tr valign="top">
 <td><img src="./Introduction to Parallel Computing_files/vonNeumann1.gif" width="293" height="277"></td>
 <td><ul>
-<li>Comprised of four main components:
+<li>Складається з чотирьох основних компонентів:
     <ul>
-    <li>Memory
-    </li><li>Control Unit
-    </li><li>Arithmetic Logic Unit
-    </li><li>Input/Output
+    <li>Пам'ять
+    </li><li>Пристрій управління
+    </li><li>Арифметичний логічний блок
+    </li><li>Введення-виведення
     </li></ul>
 <p>
-</p></li><li>Read/write, random access memory is used to store both program instructions
-    and data
+</p></li><li>Читання / запис, пам'ять випадкового доступу використовується для зберігання як програмних інструкцій, так і даних
     <ul>
-    <li>Program instructions are coded data which tell the computer to do 
-        something
-    </li><li>Data is simply information to be used by the program
+    <li>Програмні інструкції - це закодовані дані, які повідомляють комп'ютеру щось зробити
+    </li><li>Дані - це просто інформація, яка буде використовуватися програмою
     </li></ul>
 <p>
-</p></li><li>Control unit fetches instructions/data from memory, decodes 
-    the instructions and then <b><i>sequentially</i></b> coordinates operations
-    to accomplish the programmed task.
+</p></li><li>Блок керування виводить інструкції / дані з пам'яті, декодує інструкції, а потім <b><i>послідовно</i></b> координує операції для виконання запрограмованого завдання.
 <p>
-</p></li><li>Arithmetic Unit performs basic arithmetic operations
+</p></li><li>Арифметичний підрозділ виконує базові арифметичні операції
 <p>
-</p></li><li>Input/Output is the interface to the human operator
+</p></li><li>Вхід / вихід є інтерфейсом для оператора людини
 </li></ul></td>
 <td align="center"><img src="./Introduction to Parallel Computing_files/vonNeumann2.jpg" width="221" height="287" hspace="20">
-<br><i>John von Neumann circa 1940s <br>(Source: LANL archives)</i></td>
+<br><i>Джон фон Нейман близько 1940-х років<br>(Джерело: архіви LANL)</i></td>
 </tr></tbody></table>
 </p><p>
 </p><ul>
 <p>
-</p><li>More info on his other remarkable accomplishments: 
+</p><li>Більше інформації про його інші чудові досягнення:
     <a href="http://en.wikipedia.org/wiki/John_von_Neumann" target="_blank">
     http://en.wikipedia.org/wiki/John_von_Neumann</a>
 <p>
-</p></li><li>So what? Who cares?  
+</p></li><li>І що? Хто хвилює? 
     <ul>
-    <li>Well, parallel computers still follow this basic design,
-        just multiplied in units. The basic, fundamental architecture remains the 
-        same.
+    <li>Що ж, паралельні комп'ютери все ще дотримуються цього базового дизайну, просто помножуючись на одиниці. Основна, фундаментальна архітектура залишається незмінною.
     </li></ul>
 </li></ul>
 
@@ -547,25 +505,21 @@ This is the first tutorial in the "Livermore Computing Getting Started" workshop
 <a name="Flynn"> <br><br> </a>
 <table border="1" cellpadding="5" cellspacing="0" width="100%">
 <tbody><tr><td bgcolor="#98ABCE">
-<span class="heading1">Concepts and Terminology</span></td>
+<span class="heading1">Поняття та термінологія</span></td>
 </tr></tbody></table>
-</p><h2>Flynn's Classical Taxonomy</h2>
+</p><h2>Класична таксономія Флінна</h2>
 
 <ul>
-<li>There are different ways to classify parallel computers. Examples available
-    <a href="https://computing.llnl.gov/tutorials/parallel_comp/parallelClassifications.pdf" target="_blank">HERE</a>. 
+<li>Існують різні способи класифікації паралельних комп'ютерів. Приклади доступні
+    <a href="https://computing.llnl.gov/tutorials/parallel_comp/parallelClassifications.pdf" target="_blank">ТУТ</a>. 
 <p>
-</p></li><li>One of the more widely used classifications, in use since 1966, is called 
-    Flynn's Taxonomy.
+</p></li><li>Один з найбільш широко використовуваних класифікацій, що використовуються з 1966 року, називається таксономією Філліна.
 <p>
-</p></li><li>Flynn's taxonomy distinguishes multi-processor computer architectures 
-    according
-    to how they can be classified along the two independent dimensions of
-    <b><i>Instruction Stream</i></b> and <b><i>Data Stream</i></b>.  
-    Each of these dimensions can have only one of two possible states:
-    <b><i>Single</i></b> or <b><i>Multiple</i></b>.
+</p></li><li>Таксономія Флінна розрізняє багатопроцесорні комп'ютерні архітектури відповідно до того, як їх можна класифікувати за двома незалежними вимірами <b><i>потоку інструкцій</i></b> та <b><i>потоку даних</i></b>.  
+   Кожен з цих параметрів може мати лише один із двох можливих станів
+    <b><i>Одиночний </i></b> or <b><i>Кілька</i></b>.
 <p>
-</p></li><li>The matrix below defines the 4 possible classifications according to Flynn:
+</p></li><li>Матриця нижче визначає 4 можливих класифікацій відповідно до Flynn:
 <p>
 <img src="./Introduction to Parallel Computing_files/flynnsTaxonomy.gif" width="425">
 </p></li></ul>
@@ -573,16 +527,14 @@ This is the first tutorial in the "Livermore Computing Getting Started" workshop
 <p><br></p><hr><p><br>
 
 <img src="./Introduction to Parallel Computing_files/arrowBullet.gif" align="top" hspace="3">
-<span class="heading3">Single Instruction, Single Data (SISD):</span>
+<span class="heading3">Єдина інструкція, єдині дані (SISD):</span>
 </p><ul>
-<li>A serial (non-parallel) computer
-</li><li><b>Single Instruction:</b> Only one instruction stream is
-    being acted on by the CPU during any one clock cycle
-</li><li><b>Single Data:</b> Only one data stream is being used as input during any one clock cycle
-</li><li>Deterministic execution     
-</li><li>This is the oldest type of computer
-</li><li>Examples: older generation mainframes, minicomputers, workstations and single
-    processor/core PCs.
+<li>Серійний (не паралельний) комп'ютер
+</li><li><b>Єдина інструкція:</b> ЦП використовує лише один потік інструкцій протягом будь-якого циклу годин
+</li><li><b>Окремі дані:</b> лише один потік даних використовується як вхід протягом будь-якого циклу годинника
+</li><li>Детерміноване виконання   
+</li><li>Це найстаріший тип комп'ютера
+</li><li>Приклади: мейнфрейми старшого покоління, мікрокомп'ютери, робочі станції та ПК з одним процесором / ядром.
 <p>
 
 <table border="0" cellpadding="5" cellspacing="3" bgcolor="#EEEEEE" width="975"> 
@@ -592,7 +544,7 @@ This is the first tutorial in the "Livermore Computing Getting Started" workshop
 <td><img src="./Introduction to Parallel Computing_files/sisd.gif" width="188" height="224"></td>
 </tr><tr valign="top" align="center">
 <td><img src="./Introduction to Parallel Computing_files/univac1.LLNL.200pix.jpg" width="262" height="200">
-<br><b>UNIVAC1</b></td>
+<br><b>UNIVAC1	</b></td>
 <td><img src="./Introduction to Parallel Computing_files/ibm.360.200pix.jpg" width="300" height="200">
 <br><b>IBM 360</b></td>
 <td><img src="./Introduction to Parallel Computing_files/cray1.LLNL.200pix.jpg" width="200" height="200">
@@ -610,25 +562,20 @@ This is the first tutorial in the "Livermore Computing Getting Started" workshop
 <p><br></p><hr><p><br>
 
 <img src="./Introduction to Parallel Computing_files/arrowBullet.gif" align="top" hspace="3">
-<span class="heading3">Single Instruction, Multiple Data (SIMD):</span>
+<span class="heading3">Одна інструкція, кілька видів даних (SIMD):</span>
 </p><ul>
-<li>A type of parallel computer
-</li><li><b>Single Instruction:</b> All processing units execute the same instruction at        any given clock cycle
-</li><li><b>Multiple Data:</b> Each processing unit can operate on a different data
-    element
-</li><li>Best suited for specialized problems characterized by a high degree of 
-    regularity, such as graphics/image processing.
-</li><li>Synchronous (lockstep) and deterministic execution
-</li><li>Two varieties: Processor Arrays and Vector Pipelines
-</li><li>Examples: 
+<li>Тип паралельного комп'ютера
+</li><li><b>Одинична інструкція:</b>  всі процесори виконують одну й ту ж інструкцію в будь-якому заданому циклі годин
+</li><li><b>Кілька даних:</b> кожен процесор може працювати на іншому елементі даних.
+</li><li>Найкраще підходять для спеціалізованих проблем, що характеризуються високим рівнем регулярності, такими як обробка графіки / зображення.
+</li><li>Синхронний (локальний) і детермінований виконання.
+</li><li>Два різновиди: масив процесора та векторні трубопроводи
+</li><li>Приклади: 
     <ul type="circle">
-    <li>Processor Arrays: Thinking Machines CM-2, MasPar MP-1 &amp; MP-2, 
-        ILLIAC IV 
-    </li><li>Vector Pipelines: IBM 9000, Cray X-MP, Y-MP &amp; C90, Fujitsu VP, NEC SX-2, 
-        Hitachi S820, ETA10
+    <li>Масив процесора: мишачі машини CM-2, MasPar MP-1 і MP-2, ILLIAC IV
+    </li><li>Векторні трубопроводи: IBM 9000, Cray X-MP, Y-MP і C90, Fujitsu VP, NEC SX-2, Hitachi S820, ETA10
     </li></ul>
-</li><li>Most modern computers, particularly those with graphics processor units 
-   (GPUs) employ SIMD instructions and execution units.
+</li><li>Більшість сучасних комп'ютерів, особливо ті, що мають графічні процесорні блоки (графічні процесори), використовують команди SIMD та виконавчі пристрої.
 <p>
 
 <table border="0" cellpadding="5" cellspacing="3" bgcolor="#EEEEEE" width="975"> 
@@ -660,19 +607,16 @@ This is the first tutorial in the "Livermore Computing Getting Started" workshop
 <p><br></p><hr><p><br>
 
 <img src="./Introduction to Parallel Computing_files/arrowBullet.gif" align="top" hspace="3">
-<span class="heading3">Multiple Instruction, Single Data (MISD):</span>
+<span class="heading3">Кілька інструкцій, одиночні дані (MISD):</span>
 </p><ul>
-<li>A type of parallel computer
-</li><li><b>Multiple Instruction:</b> Each processing unit operates on the data 
-    independently via separate instruction streams.
-</li><li><b>Single Data:</b> A single data stream is fed into multiple processing units. 
-</li><li>Few (if any) actual examples of this class of parallel computer have ever
-    existed.
-</li><li>Some conceivable uses might be:
+<li>Тип паралельного комп'ютера
+</li><li><b>Кілька інструкцій:</b> кожен процесор працює на даних самостійно за допомогою окремих потоків інструкцій.
+</li><li><b>Окремі дані:</b> єдиний потік даних подається на кілька модулів обробки.
+</li><li>Мало (якщо такі є) фактичні приклади цього класу паралельних комп'ютерів коли-небудь існували.
+</li><li>Деякі мислимі способи використання можуть бути:
     <ul>
-    <li>multiple frequency filters operating on a single signal stream
-    </li><li>multiple cryptography algorithms attempting to crack a single coded 
-        message.
+    <li>кілька фільтрів частоти, що працюють на одному сигналі потоку
+    </li><li>кілька алгоритмів криптографії, що намагаються зламати єдине кодоване повідомлення.
     </li></ul>
 <p>
 
@@ -686,20 +630,15 @@ This is the first tutorial in the "Livermore Computing Getting Started" workshop
 <p></p><hr><p>
 
 <img src="./Introduction to Parallel Computing_files/arrowBullet.gif" align="top" hspace="3">
-<span class="heading3">Multiple Instruction, Multiple Data (MIMD):</span>
+<span class="heading3">Кілька інструкцій, кілька даних (MIMD):</span>
 </p><ul>
-<li>A type of parallel computer
-</li><li><b>Multiple Instruction:</b> Every processor may be executing a different 
-    instruction stream
-</li><li><b>Multiple Data:</b> Every processor may be working with a different data 
-    stream
-</li><li>Execution can be synchronous or asynchronous, deterministic or 
-    non-deterministic
-</li><li>Currently, the most common type of parallel computer - most modern
-    supercomputers fall into this category.
-</li><li>Examples: most current supercomputers, networked parallel computer 
-    clusters and "grids", multi-processor SMP computers, multi-core PCs.
-</li><li>Note: many MIMD architectures also include SIMD execution sub-components
+<li>Тип паралельного комп'ютера.
+</li><li><b>Кілька інструкцій:</b> кожен процесор може виконувати інший потік інструкцій.
+</li><li><b>Кілька даних:</b> кожен процесор може працювати з різним потоком даних.
+</li><li>Виконання може бути синхронним або асинхронним, детермінованим або недетермінованим.
+</li><li>В даний час найпоширеніший тип паралельного комп'ютера - найсучасніші суперкомп'ютери потрапляють до цієї категорії.
+</li><li>Приклади: найбільш сучасні суперкомп'ютери, мережеві паралельні комп'ютерні кластери та "сітки", багатопроцесорні комп'ютери SMP, багатоядерні ПК.
+</li><li>Примітка. Багато MIMD-архітектури також включають підкомпоненти виконання SIMD.
 <p>
 
 <table border="0" cellpadding="5" cellspacing="3" bgcolor="#EEEEEE" width="975"> 
@@ -731,111 +670,91 @@ This is the first tutorial in the "Livermore Computing Getting Started" workshop
 <a name="Terminology"> <br><br> </a>
 <table border="1" cellpadding="5" cellspacing="0" width="100%">
 <tbody><tr><td bgcolor="#98ABCE">
-<span class="heading1">Concepts and Terminology</span></td>
+<span class="heading1">Поняття та термінологія</span></td>
 </tr></tbody></table>
-</p><h2>Some General Parallel Terminology</h2>
+</p><h2>Деяка загальна паралельна термінологія</h2>
 
 <ul>
-<li>Like everything else, parallel computing has its own "jargon".  Some of the 
-    more commonly used terms associated with parallel computing are listed below.
+<li>Як і все інше, паралельні обчислення мають свій "жаргон". Нижче наведено деякі з найпоширеніших термінів, пов'язаних з паралельними обчисленнями.
 <p>
-</p></li><li>Most of these will be discussed in more detail later.
-<p>
+</p></li><li>Більшість з них буде обговорюватися більш детально пізніше.<p>
 </p><dl>
-<dt><b>Supercomputing / High Performance Computing (HPC)</b>
-</dt><dd>Using the world's fastest and largest computers to solve large problems. 
+<dt><b>Суперкомп'ютерне / високопродуктивне обчислення (HPC)</b>
+</dt><dd>Використання найшвидших і найбільших комп'ютерів у світі для вирішення великих проблем.
 <p>
-</p></dd><dt><b>Node </b>
-</dt><dd>A standalone "computer in a box". Usually comprised of multiple CPUs/processors/cores, memory, network interfaces, etc. Nodes are networked 
-together to comprise a supercomputer.
+</p></dd><dt><b>Вузол </b>
+</dt><dd>Автономний "комп'ютер в коробці". Зазвичай складається з декількох процесорів / процесорів / ядер, пам'яті, мережевих інтерфейсів тощо. Вузли об'єднуються в мережу для створення суперкомп'ютера.
 <p>
-</p></dd><dt><b>CPU / Socket / Processor / Core </b>
-</dt><dd>This varies, depending upon who you talk to. In the past, a CPU (Central Processing Unit) was a singular execution component for a computer. Then, multiple CPUs were incorporated into a node. Then, individual CPUs were subdivided into multiple "cores", each being a unique execution unit. CPUs with multiple cores are sometimes called "sockets" - vendor dependent. The result is a node with multiple CPUs, each containing multiple cores. The nomenclature is confused at times. Wonder why?
+</p></dd><dt><b>CPU / Socket / Процесор / Core </b>
+</dt><dd>Це залежить від того, з чим ви працюєте. У минулому процесор (центральний процесор) був єдиним компонентом виконання для комп'ютера. Потім декілька процесорів були включені в вузол. Потім, окремі процесори були  розділені на кілька "ядер", кожен з яких є унікальним блоком виконання. Процесори з декількома ядрами іноді називають "сокетами" - залежними від постачальників. Результатом є вузол з декількома процесорами, кожен із яких містить декілька ядер. Номенклатура заплутана часом. Чудово чому?
 <p>
 <img src="./Introduction to Parallel Computing_files/nodeSocketCores.jpg" width="800" heigth="375">
 </p><p>
-</p></dd><dt><b>Task </b>
-</dt><dd>A logically discrete section of computational work.  A task is typically a 
-    program or program-like set of instructions that is executed by a processor.
-    A parallel program consists of multiple tasks running on multiple processors.
+</p></dd><dt><b>Завдання </b>
+</dt><dd>Логічно дискретний розділ обчислювальних робіт. Завдання, як правило, являє собою програмний або програмний набір інструкцій, який виконується процесором. Паралельна програма складається з декількох завдань, що виконуються на декількох процесорах.
 <p>
-</p></dd><dt><b>Pipelining</b>
-</dt><dd>Breaking a task into steps performed by different processor units, with inputs streaming through, much like an assembly line; a type of parallel computing.
+</p></dd><dt><b>Трубопроводи</b>
+</dt><dd>Розбиваючи завдання на кроки, виконувані різними блоками процесора, з вхідними потоками через, як схожу лінію; тип паралельних обчислень.
 <p>
-</p></dd><dt><b>Shared Memory </b>
-</dt><dd>From a strictly hardware point of view, describes a computer architecture
-    where all processors have direct (usually bus based) access to common 
-    physical memory.  In a programming sense, it describes a model where
-    parallel tasks all have the same "picture" of memory and can directly
-    address and access the same logical memory locations regardless 
-    of where the physical memory actually exists.
+</p></dd><dt><b>Спільна пам'ять</b>
+</dt><dd>З суто апаратної точки зору, описується архітектура комп'ютера, де всі процесори мають прямий (звичайний) доступ до загальної фізичної пам'яті. У програмуванні він описує модель, в якій паралельні завдання мають однакову "картинку" пам'яті і можуть безпосередньо звертатися до одних і тих же логічних місць пам'яті незалежно від того, де фактично існує фізична пам'ять.
 <p>
-</p></dd><dt><b>Symmetric Multi-Processor (SMP)</b>
-</dt><dd>Shared memory hardware architecture where multiple processors share a single address space and have equal access to all resources.
+</p></dd><dt><b>Симметричний багатопроцесор (SMP)</b>
+</dt><dd>Архітектура апаратного забезпечення спільної пам'яті, де кілька процесорів мають єдиний адресний простір і мають рівний доступ до всіх ресурсів.
 <p>
-</p></dd><dt><b>Distributed Memory </b>
-</dt><dd>In hardware, refers to network based memory access for physical memory that 
-    is not common. As a programming model, tasks can only logically "see" 
-    local machine memory and must use communications to access memory on other
-    machines where other tasks are executing.
+</p></dd><dt><b>Розподілена пам'ять</b>
+</dt><dd>У апаратному забезпеченні розуміється доступ до пам'яті на мережевому рівні для фізичної пам'яті, який не є загальним. Як модель програмування завдання можуть логічно "бачити" локальну пам'ять комп'ютера і використовувати комунікації для доступу до пам'яті на інших машинах, де виконуються інші завдання.
 <p>
-</p></dd><dt><b>Communications </b>
-</dt><dd>Parallel tasks typically need to exchange data.  There are several ways this can be accomplished, such as through a shared memory bus or over a network, however the actual event of data exchange is commonly referred to as communications regardless of the method employed.
+</p></dd><dt><b>Зв'язок</b>
+</dt><dd>Паралельні завдання зазвичай потребують обміну даними. Це може бути досягнуто кількома способами, наприклад, через спільну пам'ять або через мережу, проте фактична подія обміну даними часто називається зв'язком, незалежно від використовуваного методу.
 <p>
-</p></dd><dt><b>Synchronization </b>
-</dt><dd>The coordination of parallel tasks in real time, very often associated with
-communications. Often implemented by establishing a synchronization point within an application where a task may not proceed further until another task(s) reaches the same or logically equivalent point.
+</p></dd><dt><b>Синхронізація</b>
+</dt><dd>Координація паралельних завдань у режимі реального часу, дуже часто пов'язана з комунікаціями. Часто реалізується шляхом встановлення точки синхронізації в додатку, де завдання може не продовжуватися, доки інші завдання (и) не досягнуть тієї ж або логічно еквівалентної точки.
 <p>
-Synchronization usually involves waiting by at least one task, and can therefore cause a parallel application's wall clock execution time to increase.
+Синхронізація зазвичай передбачає очікування як мінімум одного завдання, і тому може призвести до збільшення часу виконання часу настінного годинника паралельної програми.
 </p><p>
-</p></dd><dt><b>Granularity </b>
-</dt><dd> In parallel computing, granularity is a qualitative measure of the ratio
-    of computation to communication. 
+</p></dd><dt><b>Гранулярність</b>
+</dt><dd>При паралельних обчисленнях деталізація є якісною мірою співвідношення обчислень до комунікації.
     <ul>
-    <li><b><i>Coarse: </i></b> relatively large amounts of computational work  
-        are done between communication events
-    </li><li><b><i>Fine:</i></b> relatively small amounts of computational work are 
-        done between communication events
+    <li><b><i>Грубі:</i></b> відносно великі обсяги обчислювальних робіт виконуються між комунікаційними подіями.
+    </li><li><b><i>Добре:</i></b> відносно невеликі обсяги обчислювальних робіт виконуються між подій зв'язку.
     </li></ul>
-<p></p></dd><dt><b>Observed Speedup </b>
-</dt><dd>Observed speedup of a code which has been parallelized, defined as:
+<p></p></dd><dt><b>Спостерігається прискорення</b>
+</dt><dd>Спостерігається прискорення розпаралелювання коду, який визначається як:
 <p>
 <table border="1" cellpadding="5" cellspacing="0">
 <tbody><tr><td align="center">
-<pre>wall-clock time of serial execution
+<pre>настінний час послідовного виконання
+
 -----------------------------------
- wall-clock time of parallel execution</pre></td>
+ настінний час паралельного виконання</pre></td>
 </tr></tbody></table>
 </p><p>
-One of the simplest and most widely used indicators for a parallel program's performance.
+Один з найпростіших і найбільш широко використовуваних показників для виконання паралельної програми.
 </p><p>
-</p></dd><dt><b>Parallel Overhead </b>
-</dt><dd>The amount of time required to coordinate parallel tasks, as opposed to     
-    doing useful work. Parallel overhead can include factors such as:
+</p></dd><dt><b>Паралельні накладні витрати</b>
+</dt><dd>Кількість часу, необхідного для координації паралельних завдань, на відміну від здійснення корисної роботи. Паралельні накладні витрати можуть включати наступні фактори:
     <ul>
-    <li>Task start-up time
-    </li><li>Synchronizations
-    </li><li>Data communications
-    </li><li>Software overhead imposed by parallel languages, libraries, 
-        operating system, etc.
-    </li><li>Task termination time
+    <li>Час запуску завдання
+    </li><li>Синхронізація
+    </li><li>Передача даних
+    </li><li>Накладне програмне забезпечення, накладене паралельними мовами, бібліотеками, операційною системою тощо.
+    </li><li>Час завершення завдання
     </li></ul>
 <p>
-</p></dd><dt><b>Massively Parallel </b>
-</dt><dd>Refers to the hardware that comprises a given parallel system - having many processing elements. The meaning of "many" keeps increasing, but currently, the largest parallel computers are comprised of processing elements numbering in the hundreds of thousands to millions.
+</p></dd><dt><b>Масовано паралельно</b>
+</dt><dd>Належить до апаратного забезпечення, що складається з заданої паралельної системи, що має багато оброблюваних елементів. Значення "багатьох" постійно зростає, але в даний час найбільші паралельні комп'ютери складаються з оброблюваних елементів, що нумерують від сотень тисяч до мільйонів.
 <p>
-</p></dd><dt><b>Embarrassingly Parallel</b> 
-</dt><dd>Solving many similar, but independent tasks
-simultaneously; little to no need for coordination between the tasks.
+</p></dd><dt><b>Смутно паралельно</b> 
+</dt><dd>Рішення багатьох аналогічних, але незалежних завдань одночасно; трохи не потребує координації між завданнями.
 <p>
-</p></dd><dt><b>Scalability</b>
-</dt><dd>Refers to a parallel system's (hardware and/or software) ability to demonstrate a proportionate increase in parallel speedup with the addition of more resources. Factors that contribute to scalability include:
+</p></dd><dt><b>Масштабованість</b>
+</dt><dd>Посилається на здатність паралельної системи (обладнання та / або програмне забезпечення) демонструвати пропорційне збільшення паралельного прискорення з додаванням більшої кількості ресурсів. Фактори, що сприяють масштабованості, включають:
     <ul>
-    <li>Hardware - particularly memory-cpu bandwidths and network communication
-        properties
-    </li><li>Application algorithm
-    </li><li>Parallel overhead related
-    </li><li>Characteristics of your specific application
+    <li>Апаратне забезпечення - особливо пропускна спроможність пам'яті-процесор та властивості мережевого зв'язку
+    </li><li>Алгоритм застосування
+    </li><li>Паралельні накладні витрати пов'язані
+    </li><li>Характеристики вашої конкретної програми
     </li></ul>
 </dd></dl>
 </li></ul>
@@ -845,52 +764,46 @@ simultaneously; little to no need for coordination between the tasks.
 <a name="LimitsCosts"> <br><br> </a>
 <table border="1" cellpadding="5" cellspacing="0" width="100%">
 <tbody><tr><td bgcolor="#98ABCE">
-<span class="heading1">Concepts and Terminology</span></td>
+<span class="heading1">Поняття та термінологія</span></td>
 </tr></tbody></table>
-<h2>Limits and Costs of Parallel Programming</h2>
+<h2>Межі та витрати паралельного програмування</h2>
 
 <img src="./Introduction to Parallel Computing_files/arrowBullet.gif" align="top" hspace="3">
-<span class="heading3">Amdahl's Law:</span>
+<span class="heading3">Закон Амдаля:</span>
 <p>
 <table cellpadding="0" cellspacing="0" width="100%">
 <tbody><tr valign="top">
 <td><ul>
 <p>
-</p><li><b>Amdahl's Law</b> states that potential program
-    speedup is defined by the fraction of code (P) that can be parallelized:
+</p><li><b>Закон Амдаля</b> говорить про те, що потенціал прискорення програми визначається часткою коду (P), яку можна розпаралелювати:
 <p>
 <table border="1" cellspacing="0" cellpadding="5">
 <tbody><tr valign="top"><td><pre><b>
                      1
-    speedup   =   -------- 
+    прискорення = -------- 
                    1  - P
 
 </b></pre></td></tr></tbody></table>
 </p><p>
-</p></li><li>If none of the code can be parallelized, P = 0 and the speedup = 1 (no
-     speedup).  
+</p></li><li>Якщо жоден з блоків коду не може бути розпаралелізований, P = 0 і прискорення = 1 (без прискорення).
 <p>
-</p></li><li>If all of the code is parallelized, P = 1 and the speedup is
-     infinite (in theory).
+</p></li><li>Якщо весь код розпаралелюється, P = 1 і прискорення є нескінченним (теоретично).
 <p>
-</p></li><li>If 50% of the code can be parallelized, maximum speedup = 2, meaning
-    the code will run twice as fast.
+</p></li><li>Якщо 50% коду можна розпаралелювати, максимальна швидкість = 2, тобто код буде працювати вдвічі швидше.
 <p>
-</p></li><li>Introducing the number of processors performing the parallel fraction of 
-    work, the relationship can be modeled by:
+</p></li><li>Представляючи кількість процесорів, що виконують паралельну частку роботи, співвідношення можна моделювати за допомогою:
 <p>
 <table border="1" cellspacing="0" cellpadding="5">
 <tbody><tr valign="top"><td><pre><b>
                        1  
-    speedup   =   ------------ 
+    прискорення =  ------------ 
                     P   +  S
                    ---
                     N
 
 </b></pre></td></tr></tbody></table>
 </p><p>
-    where P = parallel fraction, N = number of processors and S = serial 
-    fraction.
+   де P = паралельна фракція, N = кількість процесорів і S = серійна фракція.
 </p></li></ul>
 </td>
 <td><img src="./Introduction to Parallel Computing_files/amdahl1.gif" width="509" height="390" border="1" hspace="20">
@@ -899,12 +812,11 @@ simultaneously; little to no need for coordination between the tasks.
 </tr></tbody></table>
 </p><p>
 </p><ul>
-<li>It soon becomes obvious that there are limits to the scalability of 
-     parallelism.  For example: 
+<li>Незабаром стає очевидним, що існують межі масштабованості паралелізму. Наприклад: 
 <p>
 <table border="1" cellspacing="0" cellpadding="5">
 <tbody><tr valign="top"><td><pre><b>
-                       speedup
+                       прискоритись
           -------------------------------------
     N     P = .50   P = .90   P = .95   P = .99
   -----   -------   -------   -------   -------
@@ -916,13 +828,14 @@ simultaneously; little to no need for coordination between the tasks.
 
 </b></pre></td></tr></tbody></table>
 </p><p>
-<b>"Famous" qoute:</b><i> You can spend a lifetime getting 95% of your code to be parallel, and never achieve better than 20x speedup no matter how many processors you throw at it!</i>
+<b>"Знаменитий" вираз:</b><i> Ви можете витратити на все життя 95% вашого коду, щоб бути паралельним, і ніколи не досягти прискорення краще, ніж 20x незалежно від того, скільки процесорів ви кидаєте на це!
+
+</i>
 </p></li></ul>
 
 <ul>
 <p>
-</p><li>However, certain problems demonstrate increased performance by increasing
-     the problem size.  For example:
+</p><li>Проте деякі проблеми демонструють підвищену продуктивність, збільшуючи розмір проблеми. Наприклад
 <p>
 <table border="1" cellspacing="0" cellpadding="5">
 <tbody><tr valign="top"><td><pre><b>
@@ -931,9 +844,7 @@ simultaneously; little to no need for coordination between the tasks.
 
 </b></pre></td></tr></tbody></table>
 </p><p>
-    We can increase the problem size by doubling the grid dimensions and
-    halving the time step. This results in four times the number of grid 
-    points and twice the number of time steps. The timings then look like:
+   Ми можемо збільшити розмір проблеми, подвоївши розміри сітки та зменшивши наполовину часовий крок. Це призводить до чотирикратного збільшення кількості точок сітки та вдвічі більшої кількості етапів часу. Тоді танфіни виглядають так:
 </p><p>
 <table border="1" cellspacing="0" cellpadding="5">
 <tbody><tr valign="top"><td><pre><b>
@@ -942,34 +853,26 @@ simultaneously; little to no need for coordination between the tasks.
 
 </b></pre></td></tr></tbody></table>
 </p><p>
-</p></li><li>Problems that increase the percentage of parallel time with their size
-    are more <b><i>scalable</i></b> than problems with a fixed percentage of
-    parallel time.
+</p></li><li>Проблеми, що збільшують відсоток паралельного часу з їх розміром, більш <b><i>масштабні</i></b> ніж проблеми з фіксованою процентною часткою паралельного часу.
 </li></ul>
 <p>
 
 <img src="./Introduction to Parallel Computing_files/arrowBullet.gif" align="top" hspace="3">
-<span class="heading3">Complexity:</span>
+<span class="heading3">Складність:</span>
 </p><ul>
 <p>
-</p><li>In general, parallel applications are much more complex than corresponding
-    serial applications, perhaps an order of magnitude.  Not only do you have
-    multiple instruction streams executing at the same time, but you also have
-    data flowing between them.
+</p><li>Загалом, паралельні програми набагато складніші, ніж відповідні послідовні програми, можливо, на порядок. Ви не тільки маєте декілька потоків інструкцій, що виконуються одночасно, але також є дані між ними.
 <p>
-</p></li><li>The costs of complexity are measured in programmer time in virtually every
-    aspect of the software development cycle:
+</p></li><li>Вартість складності вимірюється в програміста практично у всіх аспектах циклу розробки програмного забезпечення:
     <ul>
-    <li>Design
-    </li><li>Coding
-    </li><li>Debugging
-    </li><li>Tuning
-    </li><li>Maintenance
+    <li>Дизайн
+    </li><li>Кодування
+    </li><li>Налагодження
+    </li><li>Тюнінг
+    </li><li>Технічне обслуговування
     </li></ul>
 <p>
-</p></li><li>Adhering to "good" software development practices is essential when 
-    working with parallel applications - especially if somebody besides
-    you will have to work with the software.
+</p></li><li>При роботі з паралельними програмами важливо дотримуватися «правильних» правил розробки програмного забезпечення, особливо якщо хтось, крім вас, повинен буде працювати з програмним забезпеченням.
 </li></ul>
 <p>
 
