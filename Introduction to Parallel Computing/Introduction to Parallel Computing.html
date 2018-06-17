@@ -1494,64 +1494,55 @@ computing.llnl.gov/tutorials/openMP</a>
 <a name="ModelsMessage"> <br><br> </a>
 <table border="1" cellpadding="5" cellspacing="0" width="100%">
 <tbody><tr><td bgcolor="#98ABCE">
-<span class="heading1">Parallel Programming Models</span></td>
+<span class="heading1">Моделі паралельного програмування</span></td>
 </tr></tbody></table>
-<h2>Distributed Memory / Message Passing Model</h2>
+<h2>Розподілена пам'ять / Модель обмін повідомленнями</h2>
 
 <ul>
 <p>
-</p><li>This model demonstrates the following characteristics:
+</p><li>Ця модель демонструє наступні характеристики:
 <img src="./Introduction to Parallel Computing_files/msg_pass_model.gif" align="right" width="446" height="310" hspace="10" vspace="10">
     <ul>
     <p>
-    </p><li>A set of tasks that use their own local memory during computation.
-        Multiple tasks can reside on the same physical machine and/or 
-        across an arbitrary number of machines.
+    </p><li>Набір завдань, які використовують власну 
+    	локальну пам'ять під час обчислень. Кілька 
+    	завдань можуть знаходитись на тій же фізичній
+    	машині та / або на довільній кількості машин.
     <p>
-    </p></li><li>Tasks exchange data through communications by sending and 
-        receiving messages.
+    </p></li><li>Завдання обмінюються даними через 
+    	повідомлення, відправляючи та отримуючи 
+    	повідомлення.
     <p>
-    </p></li><li>Data transfer usually requires cooperative operations to be performed 
-        by each process. For example, a send operation must have a matching 
-        receive operation.
+    </p></li><liПередача даних зазвичай вимагає кооперативних
+    	операцій для кожного процесу. Наприклад, 
+    	операція відправки повинна мати відповідну 
+    	операцію прийому.
     </li></ul> 
 </li></ul>
 <p>
 
 <img src="./Introduction to Parallel Computing_files/arrowBullet.gif" align="top" hspace="3">
-<span class="heading3">Implementations:</span>
+<span class="heading3">Реалізації:</span>
 </p><ul>
-<li>From a programming perspective, message passing implementations usually 
-    comprise a library of subroutines. Calls to these subroutines
-    are imbedded in source code. The programmer is responsible for determining 
-    all parallelism.
+<li>З точки зору програмування, реалізація передачі 
+	повідомлень зазвичай складається з бібліотеки підпрограм. Виклики на ці підпрограми вкладені в вихідний код. Програміст несе відповідальність за визначення всіх паралелізму.
 <p>
-</p></li><li>Historically, a variety of message passing libraries have been 
-    available since the 1980s. These implementations differed substantially      
-    from each other making it difficult for programmers to develop portable
-    applications. 
+</p></li><li>Історично склалося, що з 80-х років доступні різні бібліотеки повідомлень. Ці реалізації суттєво 	відрізнялися один від одного, що ускладнює програмістам розробляти портативні програми. 
 <p>
-</p></li><li>In 1992, the MPI Forum was formed with the primary goal of establishing
-    a standard interface for message passing implementations.  
+</p></li><li>У 1992 році був створений Форум MPI з основною метою створення стандартного інтерфейсу для 		реалізації послань до повідомлень. 
 <p>
-</p></li><li>Part 1 of the <b>Message Passing Interface (MPI)</b> was released in
-    1994. Part 2 (MPI-2) was released in 1996 and MPI-3 in 2012.
-    All MPI specifications are available on the web at
+</p></li><li>Частина 1 <b>Message Passing Interface (MPI)</b> була випущена в 1994 році. Частина 2 
+	(MPI-2) була випущена в 1996 році і MPI-3 в 2012 році. Всі специфікації MPI доступні в Інтернеті за адресою
     <a href="http://www.mpi-forum.org/docs/" target="_blank">http://www.mpi-forum.org/docs/</a>.
 <p>
-</p></li><li>MPI is the "de facto" industry 
-    standard for message passing, replacing virtually all other 
-    message passing implementations used for production work.
-    MPI implementations exist for virtually all popular parallel computing 
-    platforms. Not all implementations include everything in MPI-1, MPI-2 
-    or MPI-3.
+</p></li><li>MPI - це "фактичний" галузевий стандарт для передачі повідомлень, який замінює практично всі 		інші реалізовані повідомлення, що використовуються для виробничої роботи. Реалізації MPI існують 			практично для всіх популярних паралельних обчислювальних платформ. Не всі реалізації включають все в 		MPI-1, MPI-2 або MPI-3.
 </li></ul>
 <p>
 
 <img src="./Introduction to Parallel Computing_files/arrowBullet.gif" align="top" hspace="3">
-<span class="heading3">More Information:</span>
+<span class="heading3">Більше інформації:</span>
 </p><ul>
-<li>MPI tutorial: 
+<li>Підручник з MPI: 
 <a href="https://computing.llnl.gov/tutorials/mpi/" target="mpi">
 computing.llnl.gov/tutorials/mpi</a>
 </li></ul>
@@ -1561,69 +1552,62 @@ computing.llnl.gov/tutorials/mpi</a>
 <a name="ModelsData"> <br><br> </a>
 <table border="1" cellpadding="5" cellspacing="0" width="100%">
 <tbody><tr><td bgcolor="#98ABCE">
-<span class="heading1">Parallel Programming Models</span></td>
+<span class="heading1">Моделі паралельного програмування</span></td>
 </tr></tbody></table>
-<h2>Data Parallel Model</h2>
+<h2>Паралельна модель даних</h2>
 
 <ul>
 <p>
-</p><li>May also be referred to as the <b>Partitioned Global Address Space (PGAS)</b>
-    model.
+</p><li>Може також називатися <b>Partitioned Global Address Space (PGAS)</b>.
 <p>
-</p></li><li>The data parallel model demonstrates the following characteristics: 
+</p></li><li>Дана паралельна модель демонструє такі характеристики: 
 
 <img src="./Introduction to Parallel Computing_files/data_parallel_model.gif" align="right" width="409" height="362" hspace="10" vspace="10">
     <ul>
     <p>
-    </p><li>Address space is treated globally
+    </p><li>Адресний простір розглядається глобально
     <p>
-    </p></li><li>Most of the parallel work focuses on performing operations on a
-        data set.  The data set is typically organized into a common
-        structure, such as an array or cube.
+    </p></li><li>Велика частина паралельної роботи зосереджена на виконанні операцій на 
+    	наборі даних. Набір даних, як правило, організований у 
+    	загальну структуру, таку як масив або куб.
     <p>
-    </p></li><li>A set of tasks work collectively on the same data structure, however,
-        each task works on a different partition of the same data structure.
+    </p></li><li>Набір завдань спільно працює на тій же структурі 
+    	даних, однак кожне завдання працює на іншому розділі тієї ж структури даних.
     <p>
-    </p></li><li>Tasks perform the same operation on their partition of work, for
-        example, "add 4 to every array element".
+    </p></li><li>Завдання виконують одну й ту саму операцію при їх розподілі роботи, 
+    	наприклад, "додати 4 до кожного елементу масиву".
     </li></ul>
 <p>
-</p></li><li>On shared memory architectures, all tasks may have access to the data
-    structure through global memory.  
+</p></li><li>На загальних архітектурах пам'яті всі завдання можуть мати 
+	доступ до структури даних через глобальну пам'ять.
 <p>
-</p></li><li>On distributed memory architectures, the global data structure can be 
-    split up logically and/or physically  across tasks.
+</p></li><li>У розподілених архітектурах пам'яті глобальна структура 
+	даних може бути логічно та / або фізично розподілена між завданнями.
 </li></ul>
 <br clear="">
 <p>
 
 <img src="./Introduction to Parallel Computing_files/arrowBullet.gif" align="top" hspace="3">
-<span class="heading3">Implementations:</span>
+<span class="heading3"> Реалізації:</span>
 </p><ul>
 <p>
-</p><li>Currently, there are several relatively popular, and sometimes developmental,
-    parallel programming implementations based on the Data Parallel / PGAS model.
+</p><li>В даний час існує декілька відносно популярних, а інколи і розроблювальних, 
+	паралельних програмних рішень на основі моделі Data Parallel / PGAS.
 <p>
-</p></li><li><b>Coarray Fortran:</b> a small set of extensions to Fortran 95 for
-    SPMD parallel programming. Compiler dependent. More information: 
+</p></li><li><b>Coarray Fortran:</b> невеликий набір розширень для Fortran 95 для парамного програмування		 SPMD. Компілятор залежить. Додаткова інформація: 
     <a href="https://en.wikipedia.org/wiki/Coarray_Fortran" target="_blank">https://en.wikipedia.org/wiki/Coarray_Fortran</a>
 <p>
-</p></li><li><b>Unified Parallel C (UPC):</b> an extension to the C programming language
-    for SPMD parallel programming. Compiler dependent. More information: 
+</p></li><li><b>Unified Parallel C (UPC):</b> розширення на мову програмування C для паралельного 				програмування SPMD. Компілятор залежить. Додаткова інформація: 
     <a href="http://upc.lbl.gov/" target="_blank">http://upc.lbl.gov/</a>
 <p>
-</p></li><li><b>Global Arrays:</b> provides a shared memory style programming environment in
-    the context of distributed array data structures. Public domain library with
-    C and Fortran77 bindings. More information: 
+</p></li><li><b>Global Arrays:</b> забезпечує спільне середовище програмування стилю пам'яті в контексті структури даних розподіленого масиву. Бібліотека публічного домену із закріпленнями C і Fortran77. Додаткова інформація:
     <a href="https://en.wikipedia.org/wiki/Global_Arrays" target="_blank">
     https://en.wikipedia.org/wiki/Global_Arrays</a>
 <p>
-</p></li><li><b>X10:</b> a PGAS based parallel programming language being developed by 
-    IBM at the Thomas J. Watson Research Center. More information: 
+</p></li><li><b>X10:</b> мова паралельного програмування на базі PGAS, розроблена компанією IBM в дослідницькому центрі ім. Томаса Дж. Уотсона. Більш детальна інформація:
     <a href="http://x10-lang.org/" target="_blank">http://x10-lang.org/</a>
 <p>
-</p></li><li><b>Chapel:</b> an open source parallel programming language project
-    being led by Cray. More information: 
+</p></li><li><b>Chapel:</b> проект з паралельним програмуванням з відкритим кодом під керівництвом Cray. Додаткова інформація: 
     <a href="http://chapel.cray.com/" target="_blank">http://chapel.cray.com/</a>
 </li></ul>
 
@@ -1632,43 +1616,37 @@ computing.llnl.gov/tutorials/mpi</a>
 <a name="Hybrid"> <br><br> </a>
 <table border="1" cellpadding="5" cellspacing="0" width="100%">
 <tbody><tr><td bgcolor="#98ABCE">
-<span class="heading1">Parallel Programming Models</span></td>
+<span class="heading1">Моделі паралельного програмування</span></td>
 </tr></tbody></table>
-<h2>Hybrid Model</h2>
+<h2>Гібридна модель</h2>
 
 <table border="0" cellspacing="0" cellpadding="0">
 <tbody><tr valign="top">
 <td>
 <ul>
-<li>A hybrid model combines more than one of the previously described
-    programming models.
+<li>Гібридна модель поєднує в собі більше ніж одну з описаних раніше моделей програмування.
 <p>
-</p></li><li>Currently, a common example of a hybrid model is the combination
-    of the message passing model (MPI) with the threads model (OpenMP).
+</p></li><li>В даний час загальним прикладом гібридної моделі є поєднання моделі 
+	передачі повідомлень (MPI) з моделлю потоків (OpenMP).
     <ul>
-    <li>Threads perform computationally intensive kernels using local,
-        on-node data
-    </li><li>Communications between processes on different nodes occurs
-        over the network using MPI
+    <li>Потоки виконують інтенсивні обчислювальння ядра, використовуючи локальні,
+        дані на вузлі
+    </li><li>Зв'язок між процесами на різних вузлах відбувається по мережі за допомогою MPI
     </li></ul> 
 <p>
-</p></li><li>This hybrid model lends itself well to the most popular (currently)
-    hardware environment of clustered multi/many-core machines. 
+</p></li><li>Ця гібридна модель добре поширюється на найпопулярнішу (в даний час) апаратне середовище кластеризованих мульти / багатоядерних машин. 
 <p>
-</p></li><li>Another similar and increasingly popular example of a hybrid model is 
-    using MPI with CPU-GPU (Graphics Processing Unit) programming.
+</p></li><li>Іншим подібним і все більш популярним прикладом гібридної моделі є використання MPI з процесором-графічним процесором (Graphics Processing Unit - програма обробки графіки).
     <ul>
-    <li>MPI tasks run on CPUs using local memory and communicating with
-        each other over a network.
-    </li><li>Computationally intensive kernels are off-loaded to GPUs on-node.
-    </li><li>Data exchange between node-local memory and GPUs uses CUDA (or something
-        equivalent).
+    <li>Завдання MPI працюють на процесорах із використанням локальної пам'яті та спілкування між собою через мережу.
+    </li><li>Обчислювальні інтенсивні ядра вивантажуються на вузли графічних процесорів.
+    </li><li>Обмін даними між вузлом-локальною пам'яттю та графічними процесорами використовує CUDA (або щось еквівалентне).
     </li></ul>
 <p>
-</p></li><li>Other hybrid models are common:
+</p></li><li>Інші гібридні моделі є загальними:
     <ul>
     <li>MPI with Pthreads
-    </li><li>MPI with non-GPU accelerators
+    </li><li>MPI з не-GPU прискорювачами
     </li><li>...
     </li></ul>
 </li></ul>
@@ -1685,59 +1663,42 @@ computing.llnl.gov/tutorials/mpi</a>
 <a name="SPMD-MPMD"> <br><br> </a>
 <table border="1" cellpadding="5" cellspacing="0" width="100%">
 <tbody><tr><td bgcolor="#98ABCE">
-<span class="heading1">Parallel Programming Models</span></td>
+<span class="heading1">Моделі паралельного програмування</span></td>
 </tr></tbody></table>
 <h2>SPMD and MPMD</h2>
 
 <img src="./Introduction to Parallel Computing_files/arrowBullet.gif" align="top" hspace="3">
-<span class="heading3">Single Program Multiple Data (SPMD):</span>
+<span class="heading3">Одноразові дані декількох програм (SPMD):</span>
 <ul>
 <p>
-</p><li>SPMD is actually a "high level" programming model that can be
-    built upon any combination of the previously mentioned parallel   
-programming models.
+</p><li>SPMD - це насправді модель програмування "високого рівня", яка може бути побудована на будь-якій комбінації раніше згаданих моделей паралельного програмування.
 <img src="./Introduction to Parallel Computing_files/spmd_model.gif" align="right" width="395" height="110" hspace="10" vspace="10">
 
 <p>
-</p></li><li>SINGLE PROGRAM: All tasks execute their copy of the same program
-    simultaneously. This program can be threads, message passing,
-    data parallel or hybrid.
+</p></li><li>SINGLE PROGRAM:  всі завдання виконують свою копію однієї і тієї ж програми одночасно. Ця програма може бути потоками, передаванням повідомлень, паралельними або гібридними даними.
 <p>
-</p></li><li>MULTIPLE DATA: All tasks may use different data
+</p></li><li>MULTIPLE DATA: Всі завдання можуть використовувати різні дані
 <p>
-</p></li><li>SPMD programs usually have the necessary logic programmed into them to 
-    allow different tasks to branch or conditionally execute only those
-    parts of the program they are designed to execute. That is, tasks 
-    do not necessarily have to execute the entire program - perhaps only a 
-    portion of it.
+</p></li><li>Програми SPMD зазвичай мають необхідну логіку, запрограмовану в них, щоб дозволити різним завданням відгалужуватися або умовно виконувати лише ті частини програми, які вони призначені для виконання. Тобто завдання не обов'язково повинні виконувати всю програму - можливо, лише її частину.
 <p>
-</p></li><li>The SPMD model, using message passing or hybrid programming,
-    is probably the most commonly used parallel programming model
-    for multi-node clusters.
+</p></li><li>Модель SPMD, що використовує передавання повідомлень або гібридне програмування, є, 	мабуть, найбільш часто використовуваною моделлю паралельного програмування для багатонасельних 	кластерів.
 </li></ul>
 <p>
 
 <img src="./Introduction to Parallel Computing_files/arrowBullet.gif" align="top" hspace="3">
-<span class="heading3">Multiple Program Multiple Data (MPMD):</span>
+<span class="heading3">Кілька даних декількох програм (MPMD):</span>
 </p><ul>
 <p>
-</p><li>Like SPMD, MPMD is actually a "high level" programming model that can 
-    be built upon any combination of the previously mentioned parallel   
-    programming models.
+</p><li>Як і SPMD, MPMD насправді є моделлю програмування "високого рівня", яка може бути 			побудована на будь-якій комбінації раніше згаданих моделей паралельного програмування.
 
 <img src="./Introduction to Parallel Computing_files/mpmd_model.gif" align="right" width="395" height="110" hspace="10" vspace="10">
 
 <p>
-</p></li><li>MULTIPLE PROGRAM: Tasks may execute different programs
-    simultaneously. The programs can be threads, message passing,
-    data parallel or hybrid.
+</p></li><li>MULTIPLE PROGRAM: Завдання можуть виконувати різні програми одночасно. Програмами можуть бути потоки, передача повідомлень, дані паралельні або гібридні.
 <p>
-</p></li><li>MULTIPLE DATA: All tasks may use different data
+</p></li><li>MULTIPLE DATA: Всі завдання можуть використовувати різні дані
 <p>
-</p></li><li>MPMD applications are not as common as SPMD applications, but may
-    be better suited for certain types of problems, particularly those
-    that lend themselves better to functional decomposition 
-    than domain decomposition (discussed later under <a href="https://computing.llnl.gov/tutorials/parallel_comp/#DesignPartitioning">
+</p></li><li>MPMD-програми не настільки поширені, як програми SPMD, але можуть бути краще підходять для певних типів проблем, особливо тих, які краще піддаються функціональному розкладу, ніж розбиттям домену (обговорене пізніше під розділом <a href="https://computing.llnl.gov/tutorials/parallel_comp/#DesignPartitioning">
     Partioning</a>).
 </li></ul>
 
@@ -1747,63 +1708,44 @@ programming models.
 <a name="DesignAutomatic"> </a>
 <table border="1" cellpadding="5" cellspacing="0" width="100%">
 <tbody><tr><td bgcolor="#98ABCE">
-<span class="heading1">Designing Parallel Programs</span></td>
+<span class="heading1">Розробка паралельних програм</span></td>
 </tr></tbody></table>
-</p><h2>Automatic vs. Manual Parallelization</h2>
+</p><h2Автоматична або ручна паралелізація </h2>
 
 <ul>
 <p>
-</p><li>Designing and developing parallel programs has characteristically been a
-    very manual process.  The programmer is typically responsible for 
-    both identifying and actually implementing parallelism. 
+</p><li>Проектування та розробка паралельних програм характерно було дуже ручним процесом. Програміст, як правило, несе відповідальність за ідентифікацію та фактичне здійснення паралелізму.
 <p>
-</p></li><li>Very often, manually developing parallel codes is a time consuming,
-    complex, error-prone and <i><b>iterative</b></i> process.
+</p></li><li>Дуже часто ручні розробки паралельних кодів - це багато часу, складний, схильний до помилок та <i><b>ітераційний</b></i> процес.
 <p>
-</p></li><li>For a number of years now, various tools have been available to assist
-    the programmer with converting serial programs into parallel programs.
-    The most common type of tool used to automatically parallelize a serial
-    program is a parallelizing compiler or pre-processor.
+</p></li><li>Протягом кількох років існують різні інструменти, які допомагають програмісту перетворити серійні програми на паралельні програми. Найпоширеніший тип інструмента, який використовується для автоматичного розпаралелювання серійної програми, - це компілятор, що розпаралелює, або попередній процесор.
 <p>
-</p></li><li>A parallelizing compiler generally works in two different ways:
+</p></li><li>Компонент, що розпаралелює, зазвичай працює двома способами:
 <p>
-<b>Fully Automatic</b>
+<b>Повністю автоматичний</b>
 </p><ul>
-<li>The compiler analyzes the source code and identifies opportunities for 
-    parallelism.  
-</li><li>The analysis includes identifying inhibitors to parallelism and possibly a cost 
-    weighting on whether or not the parallelism would actually
-    improve performance.
-</li><li>Loops (do, for) are the most frequent target for
-    automatic parallelization.
+<li>Компілятор аналізує вихідний код та визначає можливості паралелізму.  
+</li><li>Аналіз включає в себе ідентифікацію інгібіторів паралелізму та, можливо, розрахунок витрат на те, чи паралелізм дійсно покращить продуктивність.
+</li><li>Цикли (do, for) - найчастіша мета для автоматичної розпаралелювання.
 </li></ul>
 <p>
-<b>Programmer Directed</b>
+<b>Вручну</b>
 </p><ul>
-<li>Using "compiler directives" or possibly compiler flags,
-    the programmer explicitly tells the compiler how to
-    parallelize the code.
-</li><li>May be able to be used in conjunction with some degree of 
-    automatic parallelization also.
+<li>Використовуючи "директиви компілятора" або, можливо, прапори компілятора, програміст явним чином повідомляє компілятору, як паралелізувати код.
+</li><li>Може бути в змозі використовувати разом з деякою мірою автоматичної розпаралелювання також.
 </li></ul>
 <p>
-</p></li><li>The most common compiler generated parallelization is done using
-    on-node shared memory and threads (such as OpenMP).
+</p></li><li>Найпоширеніша паралілізація, сформована компілятором, виконується за допомогою спільної пам'яті на вузлі та потоків (наприклад, OpenMP).
 <p>
-</p></li><li>If you are beginning with an existing serial code and have time
-    or budget constraints, then automatic parallelization may be 
-    the answer.  However, there are several important caveats that
-    apply to automatic parallelization:
+</p></li><li>Якщо ви починаєте з існуючого серійного коду та маєте обмеження часу або бюджету, то відповідь може стати автоматичним розпаралелюванням. Проте існує кілька важливих застережень, які застосовуються до автоматичної розпаралелювання:
     <ul>
-    <li>Wrong results may be produced
-    </li><li>Performance may actually degrade
-    </li><li>Much less flexible than manual parallelization
-    </li><li>Limited to a subset (mostly loops) of code
-    </li><li>May actually not parallelize code if the compiler analysis suggests there
-        are inhibitors or the code is too complex
+    <li>Неправильні результати можуть бути отримані
+    </li><li>Продуктивність може деградувати
+    </li><li>Набагато менш гнучкий, ніж ручне розпаралелювання
+    </li><li>Обмежено до підмножини (в основному петель) коду
+    </li><li>Може фактично не розпаралелювати код, якщо аналіз компілятора передбачає наявність інгібіторів або код занадто складний
     </li></ul><p>
-</p></li><li>The remainder of this section applies to the manual method of 
-    developing parallel codes.
+</p></li><li>Решта цього розділу стосується ручного методу розробки паралельних кодів.
 </li></ul>
 
 
@@ -1812,47 +1754,36 @@ programming models.
 <a name="DesignUnderstand"> <br><br> </a>
 <table border="1" cellpadding="5" cellspacing="0" width="100%">
 <tbody><tr><td bgcolor="#98ABCE">
-<span class="heading1">Designing Parallel Programs</span></td>
+<span class="heading1">Розробка паралельних програм</span></td>
 </tr></tbody></table>
-</p><h2>Understand the Problem and the Program</h2>
+</p><h2>Зрозумійте проблему та програму</h2>
 
 <ul>
 <p>
-</p><li>Undoubtedly, the first step in developing parallel software is to
-    first understand the problem that you wish to solve in parallel.
-    If you are starting with a serial program, this necessitates 
-    understanding the existing code also. 
+</p><li>Безумовно, першим кроком у розробці паралельного програмного забезпечення є спочатку зрозуміти проблему, яку ви хочете вирішити паралельно. Якщо ви починаєте з серійної програми, це вимагає розуміння існуючого коду.
+ 
 <p>
-</p></li><li>Before spending time in an attempt to develop a parallel solution
-    for a problem, determine whether or not the problem is one that can
-    actually be parallelized.  
+</p></li><li>Перш ніж витрачати час на спробу розробити паралельне рішення задачі, визначте, чи є така проблема дійсно паралізованою. 
 <ul>
 <p>
-</p><li>Example of an easy to parallelize problem: 
+</p><li>Приклад простої для розпаралелювання проблеми:
 <p>
 <table border="1" cellpadding="5" cellspacing="0" width="75%">
 <tbody><tr><td><b>
-    Calculate the potential energy for each of several thousand 
-    independent conformations of a molecule.
-    When done, find the minimum energy conformation.
+    Обчислити потенційну енергію для кожної з декількох тисяч незалежних конформацій молекули. Коли закінчите, знайдіть мінімальну конформацію енергії.
 </b></td></tr></tbody></table>
 </p><p>
-    This problem is able to be solved in parallel. Each of the 
-    molecular conformations is independently determinable.
-    The calculation of the minimum energy conformation is also a
-    parallelizable problem. 
+    Цю проблему можна вирішити паралельно. Кожна молекулярна конформація самостійно визначається. Розрахунок мінімальної конформації енергії також є паралізованою проблемою.
 </p><p>
-</p></li><li>Example of a problem with little-to-no parallelism: 
+</p></li><li>Приклад проблеми з незмінним паралелізмом: 
 <p>
 <table border="1" cellpadding="5" cellspacing="0" width="75%">
 <tbody><tr><td><b>
-    Calculation of the Fibonacci series (0,1,1,2,3,5,8,13,21,...) by use of 
-    the formula: 
+    Розрахунок серії Фібоначчі (0,1,1,2,3,5,8,13,21, ...) за допомогою формули:
 </b><p><b>F(n) = F(n-1) + F(n-2)
 </b><br>
 </p></td></tr></tbody></table>
-</p><p> The calculation of the F(n) value uses those of both F(n-1) and F(n-2), which 
-    must be computed first.  
+</p><p> Розрахунок значення F (n) використовує такі значення як F (n-1), так і F (n-2), які необхідно спочатку обчислити.  
 </p></li></ul> 
 </li></ul>
 <p>
@@ -1861,37 +1792,27 @@ programming models.
 <tbody><tr valign="top">
 <td>
 <ul>
-<li>Identify the program's 
-    <font style="background-color: yellow"><i><b>hotspots</b></i></font>:
+<li>Визначте  
+    <font style="background-color: yellow"><i><b>точки доступу</b></i></font>програми :
     <ul>
-    <li>Know where most of the real work is being done.  
-        The majority of scientific and technical programs usually 
-        accomplish most of their work in a few places. 
-    </li><li>Profilers and performance analysis tools can help here
-    </li><li>Focus on parallelizing the hotspots and ignore those sections
-        of the program that account for little CPU usage. 
+    <li>Знайте, де виконується більша частина справжньої роботи. Більшість науково-технічних програм зазвичай виконують більшість своїх робіт у кількох місцях. 
+    </li><li>Засоби профілювання та інструменти аналізу продуктивності можуть допомогти тут
+    </li><li>Зосередьтеся на розпаралелювання точок доступу та ігноруйте ті розділи програми, що призводить до невеликого використання процесора. 
     </li></ul>
 <p>
-</p></li><li>Identify <font style="background-color: yellow"><i><b>bottlenecks</b></i></font>
-    in the program:
+</p></li><li>Визначте <font style="background-color: yellow"><i><b>вузькі місця</b></i></font>
+    в програмі:
     <ul>
-    <li>Are there areas that are disproportionately slow, or cause 
-        parallelizable work to halt or be deferred?
-        For example, I/O is usually something that slows a program down.
-    </li><li>May be possible to restructure the program or use a different
-        algorithm to reduce or eliminate unnecessary slow areas
+    <li>Чи існують ділянки, які непропорційно сповільнюють роботу або призводять до призупинення 	чи відкладені роботи, що паралелізуються? Наприклад, введення / виведення - це, як 			правило, щось, що сповільнює роботу програми.
+    </li><li>Може бути можливо перебудувати програму або використовувати інший алгоритм для зменшення або усунення непотрібних повільних областей
     </li></ul>
 <p>
-</p></li><li>Identify inhibitors to parallelism.  One common class of inhibitor
-    is <i>data dependence</i>, as demonstrated by the Fibonacci sequence
-    above.  
+</p></li><li>Визначте інгібітори паралелізму. Одним із загальних класів інгібіторів є
+    is <i>залежність даних</i>, про що свідчить послідовність Фібоначчі вище.  
 <p>
-</p></li><li>Investigate other algorithms if possible.  This may be the single most
-    important consideration when designing a parallel application.
+</p></li><li>Вивчіть інші алгоритми, якщо це можливо. Це може бути найважливішим аспектом при розробці паралельної програми.
 <p>
-</p></li><li>Take advantage of optimized third party parallel software and highly
-    optimized math libraries available from leading vendors (IBM's ESSL, 
-    Intel's MKL, AMD's AMCL, etc.).
+</p></li><li>Скористайтеся перевагами оптимізованого паралельного програмного забезпечення сторонніх розробників та високо оптимізованих математичних бібліотек, доступних провідними постачальниками (ESSL IBM, MKL Intel, AMCL AMD та ін.).
 </li></ul></td>
 <td><img src="./Introduction to Parallel Computing_files/hotspotBottleneck2.jpg" hspace="20"></td>
 </tr></tbody></table>
@@ -1902,79 +1823,54 @@ programming models.
 <a name="DesignPartitioning"> <br><br> </a>
 <table border="1" cellpadding="5" cellspacing="0" width="100%">
 <tbody><tr><td bgcolor="#98ABCE">
-<span class="heading1">Designing Parallel Programs</span></td>
+<span class="heading1">Розробка паралельних програм</span></td>
 </tr></tbody></table>
-</p><h2>Partitioning</h2>
+</p><h2>Розбиття</h2>
 
 <ul>
 <p>
-</p><li>One of the first steps in designing a parallel program is to break the
-    problem into discrete "chunks" of work that can be distributed to
-    multiple tasks.  This is known as decomposition or partitioning.
+</p><li>Одним з перших кроків при проектуванні паралельної програми є розбиття цієї проблеми на дискретні "шматки" роботи, які можуть бути розподілені на декілька завдань. Це відоме як розкладання або розбиття.
 <p>
-</p></li><li>There are two basic ways to partition computational work among parallel 
-    tasks: <b><i>domain decomposition</i></b> and 
-    <b><i>functional decomposition</i></b>. 
+</p></li><li>Існує два основних способи розподілу обчислювальної роботи серед паралельних завдань: <b><i>розбиття на ділянки</i></b> і 
+    <b><i>функціональне розбиття</i></b>. 
 </li></ul>
 <p>
 
 <img src="./Introduction to Parallel Computing_files/arrowBullet.gif" align="top" hspace="3">
-<span class="heading3">Domain Decomposition:</span>
+<span class="heading3">Розподіл ділянок:</span>
     </p><ul>
     <p>
-    </p><li>In this type of partitioning, the data associated with a problem
-        is decomposed.  Each parallel task then works on a portion of
-        the data.
+    </p><li>У цьому типі розбиття дані, пов'язані з проблемою, розкладені. Кожна паралельна задача потім працює на частині даних.
     <p><img src="./Introduction to Parallel Computing_files/domain_decomp.gif" width="388" height="216">
     </p><p>
 <a name="distributions"> </a>
-    </p></li><li>There are different ways to partition data:
+    </p></li><li>Існують різні способи розподілу даних:
     <p><img src="./Introduction to Parallel Computing_files/distributions.gif" width="502" height="386">
     </p></li></ul>
 <p>
 
 <img src="./Introduction to Parallel Computing_files/arrowBullet.gif" align="top" hspace="3">
-<span class="heading3">Functional Decomposition:</span>
+<span class="heading3">Функціональне розкладання:</span>
     </p><ul>
     <p>
-    </p><li>In this approach, the focus is on the computation that is to be      
-        performed rather than on the data manipulated by the computation.
-        The problem is decomposed according to the work that must be done.
-        Each task then performs a portion of the overall work.
+    </p><li>У цьому підході основна увага приділяється виконанню обчислень, а не даним, яким керується обчислення. Проблема розкладається відповідно до роботи, яка повинна бути виконана. Потім кожне завдання виконує частину загальної роботи.
     <p><img src="./Introduction to Parallel Computing_files/functional_decomp.gif" width="587" height="353">
     </p><p>
-    </p></li><li>Functional decomposition lends itself well to problems that can be
-        split into different tasks.  For example:
+    </p></li><li>Функціональна декомпозиція добре підходить до проблем, які можна розділити на різні завдання. Наприклад:
         <dl>
         <p>
-        </p><dt><b>Ecosystem Modeling</b>
-        <br>Each program calculates the population
-            of a given group, where each group's growth depends on that of its
-            neighbors. As time progresses, each process calculates
-            its current state, then exchanges information with the neighbor  
-            populations. All tasks then progress to calculate the state at the
-            next time step.
+        </p><dt><b>Моделювання екосистем</b>
+        <br>Кожна програма розраховує кількість населення певної групи, де ріст кожної групи залежить від кількості його сусідів. З розвитком часу кожен процес обчислює його поточний стан, потім обмінюється інформацією з сусідніми групами. Всі завдання виконуються, щоб обчислити стан на наступному кроці.
         <p>
         <img src="./Introduction to Parallel Computing_files/functional_ex1.gif" width="567" height="221">
         </p><p>
-        </p></dt><dt><b>Signal Processing</b>
-        <br>An audio signal data set is passed
-            through four distinct computational filters. Each filter is a 
-            separate process. The first segment of data must pass through the
-            first filter before progressing to the second. When it does, the
-            second segment of data passes through the first filter. By the time
-            the fourth segment of data is in the first filter, all four
-            tasks are busy.
+        </p></dt><dt><b>Обробка</b>
+        <br>Набір даних аудіосигналу проходить через чотири різні обчислювальні фільтри. Кожен фільтр є окремим процесом. Перший сегмент даних повинен пройти через перший фільтр, перш ніж перейти до другого. Коли це відбувається, другий сегмент даних проходить через перший фільтр. На той час, коли четвертий сегмент даних знаходиться в першому фільтрі, всі чотири завдання є зайняті.
         <p>
         <img src="./Introduction to Parallel Computing_files/functional_ex2.gif" width="703" height="272">
         </p><p>
-        </p></dt><dt><b>Climate Modeling</b>
-        <br>Each model component can be thought of as a separate task.
-            Arrows represent exchanges of data between components during
-            computation: the atmosphere model generates wind velocity data 
-            that are used by the ocean model, the ocean model generates sea
-            surface temperature data that are used by the atmosphere model, 
-            and so on.
+        </p></dt><dt><b>Кліматичне моделювання</b>
+        <br>Кожна модель може розглядатися як окреме завдання. Стрілки являють собою обмін даними між компонентами під час обчислень: модель атмосфери формує дані швидкості вітру, які використовуються океанською моделлю, модель океану дає дані про температуру поверхні моря, які використовуються моделлю атмосфери тощо.
         <p>
         <table border="0" cellpadding="0" cellspacing="0">
         <tbody><tr valign="top">
@@ -1984,7 +1880,7 @@ programming models.
         </tr></tbody></table>
         </p></dt></dl>
 <p>
-</p></li><li>Combining these two types of problem decomposition is common and natural.
+</p></li><li>Поєднання цих двох типів розкладання задач є загальним і природним.
 <p>
 </p></li></ul>
 
@@ -1993,37 +1889,26 @@ programming models.
 <a name="DesignCommunications"> <br><br> </a>
 <table border="1" cellpadding="5" cellspacing="0" width="100%">
 <tbody><tr><td bgcolor="#98ABCE">
-<span class="heading1">Designing Parallel Programs</span></td>
+<span class="heading1">Розробка паралельних програм</span></td>
 </tr></tbody></table>
-<h2>Communications</h2>
+<h2>Зв'язок</h2>
 
 <img src="./Introduction to Parallel Computing_files/arrowBullet.gif" align="top" hspace="3">
-<span class="heading3">Who Needs Communications?</span>
+<span class="heading3">Кому потрібні комунікації?</span>
 <ul>
-<p>The need for communications between tasks depends upon your problem:
+<p>Необхідність зв'язку між завданнями залежить від вашої проблеми:
 </p><p>
 <table border="0" cellspacing="0" cellpadding="0" width="90%">
 <tbody><tr valign="top">
-<td><b>You DON'T need communications:</b>
+<td><b>Вам не потрібні комунікації:</b>
 <ul>
-<li>Some types of problems can be decomposed and executed in parallel
-    with virtually no need for tasks to share data. These types of problems are 
-    often called <b><i>embarrassingly parallel</i></b> - little or no communications
-    are required. 
-</li><li>For example, imagine an
-    image processing operation where every pixel in a black and white image
-    needs to have its color reversed.   The image data can easily be 
-    distributed to multiple tasks that then act independently of each other
-    to do their portion of the work.  
+<li>Деякі типи проблем можуть бути розкладені та виконані паралельно з практично відсутністю необхідності у спільних даних для передачі даних. Ці типи проблем часто називаються <b><i>незрозуміло паралельними</i></b> - повідомлення або відсутність повідомлень потрібні. 
+</li><li>Наприклад, уявіть собі операцію обробки зображення, коли кожен піксель у чорно-білому 		малюнку повинен мати свій колір навпаки. Дані зображення можна легко розподілити на декілька 	 завдань, які потім діють незалежно один від одного, щоб виконувати свою частину роботи.  
 </li></ul></td>
-<td><b>You DO need communications:</b>
+<td><b>Вам потрібні комунікації:</b>
 <ul>
-<li>Most parallel applications are not quite so simple, and do require 
-    tasks to share data with each other.  
-</li><li>For example, a 2-D heat diffusion problem
-    requires a task to know the temperatures calculated by the tasks that 
-    have neighboring data.  Changes to neighboring data has a direct effect 
-    on that task's data.
+<li>Більшість паралельних програм не зовсім настільки прості, і вони вимагають завдань для обміну даними один з одним.  
+</li><li>Наприклад, проблема з дифузією 2D вимагає задачі знати температури, розраховані завдань, які мають сусідні дані. Зміни сусідніх даних безпосередньо впливають на дані цього завдання.
 </li></ul></td>
 </tr><tr valign="top">
 <td align="center"><br><img src="./Introduction to Parallel Computing_files/black2white.gif"></td>
@@ -2033,102 +1918,68 @@ programming models.
 <p>
 
 <img src="./Introduction to Parallel Computing_files/arrowBullet.gif" align="top" hspace="3">
-<span class="heading3">Factors to Consider:</span>
+<span class="heading3">Фактори, які слід враховувати:</span>
 </p><ul>
 <p>
-There are a number of important factors to consider when designing your
-program's inter-task communications:
+При розробці міжзадачних комунікацій вашої програми необхідно враховувати ряд важливих факторів:
 </p><p>
 <img src="./Introduction to Parallel Computing_files/commOverhead.jpg" align="right" hspace="20" width="250">
-</p><li><b>Communication overhead</b>
+</p><li><b>Комунікаційні накладні витрати</b>
     <ul>
-    <li>Inter-task communication virtually always implies overhead.
-    </li><li>Machine cycles and resources that could be used for computation
-        are instead used to package and transmit data.
-    </li><li>Communications frequently require some type of synchronization
-        between tasks, which can result in tasks spending time "waiting"
-        instead of doing work.
-    </li><li>Competing communication traffic can saturate the available network
-        bandwidth, further aggravating performance problems.
+    <li>Міжзазначне спілкування практично завжди означає накладні витрати.
+    </li><li>Циклі та ресурси машини, які можуть використовуватися для обчислень, замість цього використовуються для пакетування та передачі даних.
+    </li><li>Зв'язок часто вимагає певного типу синхронізації між завданнями, що може призвести до того, що завдання виконуються часом "очікування", а не робота.
+    </li><li>Конкуруючий трафік зв'язку може наситити доступну смугу пропускання мережі, що ще більше погіршує проблеми з продуктивністю.
     </li></ul>
 <p>
-</p></li><li><b>Latency vs. Bandwidth</b>
+</p></li><li><b>Затримка проти пропускної здатності</b>
     <ul>
-    <li><b><i>latency</i></b> is the time it takes to send a minimal (0 byte)
-        message from point A to point B.  Commonly expressed as microseconds.
-    </li><li><b><i>bandwidth</i></b> is the amount of data that can be communicated
-        per unit of time.  Commonly expressed as megabytes/sec or gigabytes/sec.
-    </li><li>Sending many small messages can cause latency to dominate communication
-        overheads.  Often it is more efficient to package small messages into a
-        larger message, thus increasing the effective communications bandwidth.
+    <li><b><i>Затримка</i></b>- це час, який потрібно для відправки мінімального (0 байт) повідомлення з точки А в пункт B. Загально виражений як мікросекунди.
+    </li><li><b><i>пропускна здатність</i></b>- це кількість даних, які можна передавати за одиницю часу. Зазвичай виражається як мегабайт / с або гігабайт / с.
+    </li><li>Відправка багатьох невеликих повідомлень може призвести до затримки домінування накладних витрат на зв'язок. Часто ефективніше пакуйте невеликі повідомлення у великі повідомлення, тим самим збільшуючи ефективну пропускну здатність зв'язку.
     </li></ul>
 <p>
-</p></li><li><b>Visibility of communications</b>
+</p></li><li><b>Видимість комунікацій</b>
     <ul>
-    <li>With the Message Passing Model, communications are explicit and
-        generally quite visible and under the control of the programmer.  
-    </li><li>With the Data Parallel Model, communications often occur
-        transparently to the programmer, particularly on distributed 
-        memory architectures.  The programmer may not even be able to
-        know exactly how inter-task communications are being accomplished.
+    <li>З моделлю передачі повідомлень зв'язок є явним і загалом цілком видимим і під контролем програміста. 
+    </li><li>За допомогою паралельної моделі даних, комунікації часто прозорі у програмному забезпеченні, особливо в розподілених архітектурах пам'яті. Програміст може навіть не вміти точно знати, як відбувається взаємодія між повідомленнями.
     </li></ul>
 <p>
-</p></li><li><b>Synchronous vs. asynchronous communications</b>
+</p></li><li><b>Синхронні або асинхронні комунікації</b>
     <ul>
-    <li>Synchronous communications require some type of "handshaking"
-        between tasks that are sharing data.  This can be explicitly
-        structured in code by the programmer, or it may happen at a
-        lower level unknown to the programmer.
-    </li><li>Synchronous communications are often referred to as
-        <b><i>blocking</i></b> communications since other work must
-        wait until the communications have completed.
-    </li><li>Asynchronous communications allow tasks to transfer data independently
-        from one another. For example, task 1 can prepare and send a
-        message to task 2, and then immediately begin doing other work.
-        When task 2 actually receives the data doesn't matter. 
-    </li><li>Asynchronous communications are often referred to as
-        <b><i>non-blocking</i></b> communications since other work can
-        be done while the communications are taking place.
-    </li><li>Interleaving computation with communication is the single greatest
-        benefit for using asynchronous communications.
+    <li>Синхронні комунікації вимагають певного типу "рукостискання" між завданнями, які використовують дані. Програміст може чітко структуруватися в коді, або це може статися на більш низькому рівні, невідомий програмісту.
+    </li><li>Синхронні комунікації часто називають
+        <b><i>блокування</i></b> комунікацій, оскільки інша робота повинна зачекати до завершення зв'язку.
+    </li><li>Асинхронні зв'язки дозволяють завданням передавати дані незалежно один від одного. Наприклад, завдання 1 може підготувати і відправити повідомлення до завдання 2, а потім негайно почати робити іншу роботу. Коли завдання 2 фактично отримує дані, це не має значення. 
+    </li><li>Асинхронні комунікації часто називають
+        <b><i>неблокуючими</i></b> комунікаціями, оскільки інша робота може виконуватися під час спілкування.
+    </li><li>Обчислення між класами при спілкуванні є єдиною найбільшою перевагою для використання асинхронних повідомлень.
     </li></ul>
 <p>
-</p></li><li><b>Scope of communications</b>
+</p></li><li><b>Обсяг комунікацій</b>
     <ul>
-    <li>Knowing which tasks must communicate with each other is critical during
-        the design stage of a parallel code. Both of the two scopings 
-        described below can be implemented synchronously or asynchronously.
-    </li><li><b><i>Point-to-point</i></b> - involves two tasks with one task
-        acting as the sender/producer of data, and the other acting as 
+    <li>Знання, які завдання повинні взаємодіяти один з одним, є критичним під час розробки паралельного коду. Обидва описані нижче обчислення можуть бути реалізовані синхронно або асинхронно.
+    </li><li><b><i>Point-to-point</i></b> - включає в себе два завдання з одним завданням, що виступає як відправник / виробник даних, а інший - як одержувач / споживач.
         the receiver/consumer.
-    </li><li><b><i>Collective</i></b> - involves data sharing between more than
-        two tasks, which are often specified as being members in a common 
-        group, or collective. Some common variations (there are more):
+    </li><li><b><i>Collective</i></b> - включає обмін даними між більш ніж двома завданнями, які часто вказуються як члени спільної групи чи колективу. Деякі загальні варіанти (їх більше):
     <p>
     <img src="./Introduction to Parallel Computing_files/collective_comm.gif"> 
     </p></li></ul>
 <p>
-</p></li><li><b>Efficiency of communications</b>
+</p></li><li><b>Ефективність комунікацій</b>
     <ul>
-    <li>Oftentimes, the programmer has choices that can affect communications
-        performance.  Only a few are mentioned here.        
-    </li><li>Which implementation for a given model should be used?  Using
-        the Message Passing Model as an
-        example, one MPI implementation may be faster on a given
-        hardware platform than another.
-    </li><li>What type of communication operations should be used?  As
-        mentioned previously, asynchronous communication operations
-        can improve overall program performance.
-    </li><li>Network fabric - some platforms may offer more than one network
-        for communications.  Which one is best?
+    <li>Часто, програміст має вибір, який може вплинути на продуктивність зв'язку. Тут згадуються лише деякі.        
+    </li><li>Яка реалізація для даної моделі повинна бути використана? Як приклад, як приклад, Модель передачі повідомлень, одна реалізація MPI може бути швидшою на даній апаратній платформі, ніж інша.
+    </li><li>Який тип комунікаційних операцій слід використовувати? Як згадувалося раніше, асинхронні операції зв'язку можуть поліпшити загальну продуктивність програми.
+    </li><li>Мережева тканина - деякі платформи можуть пропонувати більше однієї мережі для зв'язку. Який з них найкращий?
     </li></ul>
 <p>
 </p><p>
-</p></li><li><b>Overhead and Complexity</b>
+</p></li><li><b>Накладні та складні</b>
 <p>    
     <img src="./Introduction to Parallel Computing_files/helloWorldParallelCallgraph.gif" width="914" height="497">
 </p><p>
-</p></li><li>Finally, realize that this is only a partial list of things to consider!!!
+</p></li><li>Нарешті, зрозумійте, що це лише частковий перелік речей, які слід розглянути !!!
 </li></ul>
 
 
@@ -2137,57 +1988,45 @@ program's inter-task communications:
 <a name="DesignSynchronization"> <br><br> </a>
 <table border="1" cellpadding="5" cellspacing="0" width="100%">
 <tbody><tr><td bgcolor="#98ABCE">
-<span class="heading1">Designing Parallel Programs</span></td>
+<span class="heading1">Розробка паралельних програм</span></td>
 </tr></tbody></table>
-</p><h2>Synchronization</h2>
+</p><h2>Синхронізація</h2>
 
 <img src="./Introduction to Parallel Computing_files/sychronization2.jpg" width="300" align="right" hspace="20">
 <ul>
-<li>Managing the sequence of work and the tasks performing it is a critical
-    design consideration for most parallel programs.
+<li>Управління послідовністю роботи та виконання завдань є критичним дизайном для більшості паралельних програм.
 <p>
-</p></li><li>Can be a significant factor in program performance (or lack of it)
+</p></li><li>Може бути важливим чинником ефективності програми (або його відсутності)
 <p>
-</p></li><li>Often requires "serialization" of segments of the program.
+</p></li><li>Часто вимагає "серіалізація" сегментів програми
 </li></ul>
 
 <img src="./Introduction to Parallel Computing_files/arrowBullet.gif" align="top" hspace="3">
-<span class="heading3">Types of Synchronization:</span>
+<span class="heading3">Типи синхронізації:</span>
 <ul>
 <p>
-</p><li><b>Barrier</b>
+</p><li><b>Бар'єр</b>
     <ul>
-    <li>Usually implies that all tasks are involved
-    </li><li>Each task performs its work until it reaches the barrier.  It then
-        stops, or "blocks".        
-    </li><li>When the last task reaches the barrier, all tasks are synchronized.
-    </li><li>What happens from here varies.  Often, a serial section of work must
-        be done.  In other cases, the tasks are automatically released to
-        continue their work.  
+    <li>Звичайно, випливає, що всі завдання беруть участь
+    </li><li>Кожне завдання виконує свою роботу до досягнення бар'єру. Потім він зупиняється або "блокується".        
+    </li><li>Коли останнє завдання досягає бар'єру, всі завдання синхронізуються.
+    </li><li>Те, що відбувається від цього, змінюється. Часто робиться серійний розділ роботи. В інших випадках завдання автоматично відпускаються для продовження роботи.  
     </li></ul>
 <p>
-</p></li><li><b>Lock / semaphore</b>
+</p></li><li><b>Замок / семафор</b>
     <ul>
-    <li>Can involve any number of tasks
-    </li><li>Typically used to serialize (protect) access to global data
-        or a section of code. Only one task at a time may use (own) the 
-        lock / semaphore / flag.
-    </li><li>The first task to acquire the lock "sets" it.  This task can then
-        safely (serially) access the protected data or code.
-    </li><li>Other tasks can attempt to acquire the lock but must wait until the
-        task that owns the lock releases it.
-    </li><li>Can be blocking or non-blocking
+    <li>Можна задіяти будь-яку кількість завдань
+    </li><li>Зазвичай використовується для серіалізації (захисту) доступу до глобальних даних або розділу коду. Тільки одне завдання одночасно може використовувати (власний) замок / семафор / прапор.
+    </li><li>Перше завдання придбання блокування "встановлює" його. Це завдання може безпечно (серійно) отримати доступ до захищених даних або коду.
+    </li><li>Інші завдання можуть намагатися набувати замок, але слід зачекати, поки завдання, яке належить блоку, не виключає його.
+    </li><li>Можна блокувати або не блокувати
     </li></ul>
 <p>
-</p></li><li><b>Synchronous communication operations</b>
+</p></li><li><b>Синхронні операції зв'язку</b>
     <ul>
-    <li>Involves only those tasks executing a communication operation
-    </li><li>When a task performs a communication operation, some form of
-        coordination is required with the other task(s) participating in
-        the communication.  For example, before a task can perform a
-        send operation, it must first receive an acknowledgment from the
-        receiving task that it is OK to send.  
-    </li><li>Discussed previously in the Communications section.
+    <li>Включає лише ті завдання, що виконують операцію зв'язку
+    </li><li>Коли завдання виконує операцію зв'язку, потрібна певна форма координації з іншим завданням, що беруть участь у спілкуванні. Наприклад, перед тим, як завдання може виконати операцію відправки, вона спочатку повинна отримати підтвердження від приймаючої задачі, що його потрібно надіслати.
+    </li><li>Обговорювалося раніше в розділі "Повідомлення".
     </li></ul>
 </li></ul>
 
@@ -2197,31 +2036,27 @@ program's inter-task communications:
 <a name="DesignDependencies"> <br><br> </a>
 <table border="1" cellpadding="5" cellspacing="0" width="100%">
 <tbody><tr><td bgcolor="#98ABCE">
-<span class="heading1">Designing Parallel Programs</span></td>
+<span class="heading1">Розробка паралельних програм</span></td>
 </tr></tbody></table>
-</p><h2>Data Dependencies</h2>
+</p><h2>Залежності даних</h2>
 
 <img src="./Introduction to Parallel Computing_files/dependencies1.jpg" align="right" hspace="20">
 <img src="./Introduction to Parallel Computing_files/arrowBullet.gif" align="top" hspace="3">
-<span class="heading3">Definition:</span>
+<span class="heading3">Визначення:</span>
 <ul>
 <p>
-</p><li>A <b><i>dependence</i></b> exists between program statements when
-    the order of statement execution affects the results of the program. 
+</p><li>A <b><i>Залежність</i></b> існує між операторами програми , коли порядок виконання інструкції впливає на результати програми. 
 <p>
-</p></li><li>A <b><i>data dependence</i></b> results from multiple use of the same
-    location(s) in storage by different tasks.
-<p>
-</p></li><li>Dependencies are important to parallel programming because they are one
-    of the primary inhibitors to parallelism.
+</p></li><li>A <b><i>Залежність даних</i></b> виникає в результаті багаторазового використання одного і того ж місця (місць) в сховище з допомогою різних завдань.
+</p></li><li>Залежність важлива для паралельного програмування, оскільки вони є одним з первинних інгібіторів паралелізму.
 </li></ul>
 <p>
 
 <img src="./Introduction to Parallel Computing_files/arrowBullet.gif" align="top" hspace="3">
-<span class="heading3">Examples:</span>
+<span class="heading3">Приклади:</span>
 </p><p>
 </p><ul>
-<li><b>Loop carried data dependence</b>
+<li><b>Петля здійснює залежність даних</b>
 <p>
 <table border="1" cellspacing="0" cellpadding="5">
 <tbody><tr valign="top">
@@ -2232,57 +2067,46 @@ END DO
 </b></pre></td>
 </tr></tbody></table>
 </p><p>
-    The value of A(J-1) must be computed before the value of A(J),
-    therefore A(J) exhibits a data dependency on A(J-1).
-    Parallelism is inhibited.
-</p><p> If Task 2 has A(J) and task 1 has A(J-1), 
-    computing the correct value of A(J) necessitates: 
+    Значення A (J-1) повинно бути обчислено до значення A (J), тому A (J) виявляє залежність даних від A (J-1). Паралелізм гальмується.
+</p><p> Якщо завдання 2 має A (J) і завдання 1 має A (J-1), обчислення правильного значення A (J) вимагає: 
     </p><ul type="circle">
-    <li>Distributed memory architecture - task 2 must obtain the value 
-        of A(J-1) from task 1 after task 1 finishes its computation
-    </li><li>Shared memory architecture - task 2 must read A(J-1) after 
-        task 1 updates it 
+    <li>Архітектура розподіленої пам'яті - задача 2 повинна отримати значення A (J-1) від завдання 1 після виконання завдання 1 для його обчислення
+    </li><li>Архітектура спільної пам'яті. Завдання 2 має прочитати A (J-1) після завдання 1 оновлює його
     </li></ul>
 <p>
-</p></li><li><b>Loop independent data dependence</b>
+</p></li><li><b>Незалежна залежність даних від циклу</b>
 <p>
 <table border="1" cellspacing="0" cellpadding="5">
 <tbody><tr valign="top">
 <td><pre><b>
-task 1        task 2
-------        ------
+Завдання 1        завдання 2
+------        	    ------
 
-X = 2         X = 4
-  .             .
-  .             .
-Y = X**2      Y = X**3
+X = 2               X = 4
+  .                   .
+  .                   .
+Y = X**2           Y = X**3
 </b></pre></td>
 </tr></tbody></table>
 </p><p>
-    As with the previous example, parallelism is inhibited. 
-    The value of Y is dependent on: 
+    Як і в попередньому прикладі, паралелізм гальмується. Значення Y залежить від:
     </p><ul type="circle">
-    <li>Distributed memory architecture - if or when the value of X is
-        communicated between the tasks. 
-    </li><li>Shared memory architecture - which task last stores the value of X.
+    <li>Архітектура розподіленої пам'яті - якщо або коли значення X передається між завданнями. 
+    </li><li>Архітектура спільної пам'яті - останнє завдання, яке зберігає значення X.
     </li></ul>
 <p>
-</p></li><li>Although all data dependencies are important to identify when designing
-    parallel programs, loop carried dependencies are particularly important
-    since loops are possibly the most common target of parallelization efforts.
+</p></li><li>Хоча всі залежнощі даних важливі для ідентифікації під час розробки паралельних програм, залежно від виконання циклів є особливо важливими, оскільки цикли є, можливо, найпоширенішою метою процесу розпаралелювання.
 
 </li></ul>
 <p>
 
 <img src="./Introduction to Parallel Computing_files/arrowBullet.gif" align="top" hspace="3">
-<span class="heading3">How to Handle Data Dependencies:</span>
+<span class="heading3">Як керувати залежностями даних:</span>
 </p><ul>
 <p>
-</p><li>Distributed memory architectures - communicate required data at  
-    synchronization points.
+</p><li>Розподілені архітектури пам'яті - передача необхідних даних в точках синхронізації.
 <p>
-</p></li><li>Shared memory architectures -synchronize read/write operations between
-    tasks. 
+</p></li><li>Архітектура спільної пам'яті - синхронізація операцій читання / запису між завданнями. 
 </li></ul>
 
 
@@ -2291,21 +2115,15 @@ Y = X**2      Y = X**3
 <a name="DesignLoadBalance"> <br><br> </a>
 <table border="1" cellpadding="5" cellspacing="0" width="100%">
 <tbody><tr><td bgcolor="#98ABCE">
-<span class="heading1">Designing Parallel Programs</span></td>
+<span class="heading1">Розробка паралельних програм</span></td>
 </tr></tbody></table>
-</p><h2>Load Balancing</h2>
+</p><h2>Балансування навантаження</h2>
 
 <ul>
 <p>
-</p><li>Load balancing refers to the practice of distributing approximately equal
-    amounts of work among tasks
-    so that <b><i>all</i></b> tasks are kept busy <b><i>all</i></b> of the time.  
-    It can be considered a minimization of task idle time.
+</p><li>Балансування навантаження стосується практики розподілу приблизно однакових обсягів робіт серед завдань, щоб  <b><i>всі</i></b> завдання були постійно зайняті <b><i>весь</i></b> час. Це можна вважати мінімізацією часу простою завдання.
 <p>
-</p></li><li>Load balancing is important to parallel programs for performance
-    reasons.  For example, if all tasks are subject to a barrier
-    synchronization point, the slowest task will determine the overall
-    performance.
+</p></li><li>Балансування навантаження важливе для паралельних програм з міркувань продуктивності. Наприклад, якщо для всіх завдань підлягає точка синхронізації бар'єру, повільне завдання визначатиме загальну продуктивність.
 <p>
 <table border="0" cellpadding="0" cellspacing="0">
 <tbody><tr valign="top">
@@ -2316,23 +2134,18 @@ Y = X**2      Y = X**3
 </p></li></ul>
 
 <img src="./Introduction to Parallel Computing_files/arrowBullet.gif" align="top" hspace="3">
-<span class="heading3">How to Achieve Load Balance:</span>
+<span class="heading3">Як досягти балансу завантаження</span>
 <ul>
 <p>
-</p><li><b>Equally partition the work each task receives</b>
+</p><li><b>Кожне завдання одержує рівну частину роботи</b>
     <ul>
-    <li>For array/matrix operations where each task performs similar
-        work, evenly distribute the data set among the tasks.
-    </li><li>For loop iterations where the work done in each iteration
-        is similar, evenly distribute the iterations across the tasks.
-    </li><li>If a heterogeneous mix of machines with varying performance
-        characteristics are being used, be sure to use some type of performance
-        analysis tool to detect any load imbalances.  Adjust work accordingly.
+    <li>Для операцій масиву / матриці, де кожне завдання виконує подібну роботу, рівномірно розподіляють набір даних серед завдань.
+    </li><li>Для ітерацій циклу, де робота, виконана у кожній ітерації, аналогічна, рівномірно розподіляють ітерації по задачам.
+    </li><li>Якщо використовується неоднорідна суміш машин з різними характеристиками продуктивності, обов'язково використовуйте який-небудь тип інструмента аналізу продуктивності для виявлення будь-якого дисбалансу навантаження. Відрегулюйте роботу відповідно.
     </li></ul><p>
-</p></li><li><b>Use dynamic work assignment</b>
+</p></li><li><b>Використовуйте динамічне робоче завдання</b>
     <ul>
-    <li>Certain classes of problems result in load imbalances even if data
-        is evenly distributed among tasks:
+    <li>Деякі класи проблем призводять до дисбалансу навантаження, навіть якщо дані рівномірно розподілені між завданнями:
 <p>
 <table border="0" cellspacing="0" cellpadding="5" width="90%">
 <tbody><tr valign="top">
@@ -2340,21 +2153,17 @@ Y = X**2      Y = X**3
 <td width="33%"><img src="./Introduction to Parallel Computing_files/adaptiveGrid.jpg" height="250"></td>
 <td width="33%"><img src="./Introduction to Parallel Computing_files/n-body.jpg" height="230" vspace="10"></td>
 </tr><tr valign="top">
-<td>Sparse arrays - some tasks will have actual data to work on while others have mostly "zeros".</td>
-<td>Adaptive grid methods - some tasks may need to refine their mesh while others don't.</td>
-<td><i>N</i>-body simulations - particles may migrate across task domains requiring more work for some tasks.
+<td>Розгалужені масиви - деякі завдання матимуть фактичні дані для роботи, тоді як інші мають в основному «нулі».</td>
+<td>Методи адаптивної сітки - для деяких завдань може знадобитися поліпшити їх сітку, а інших - ні.</td>
+<td><i>N</i>-body simulations - частинки можуть мігрувати між доменами задач, що потребують більшої роботи для виконання деяких завдань.
 </td>
 </tr></tbody></table>
 </p><p>
-    </p></li><li>When the amount of work each task will perform is intentionally
-        variable, or is unable to be predicted, it may be helpful to use
-        a <b><i>scheduler-task pool</i></b> approach.  As each task finishes
-        its work, it receives a new piece from the work queue.
+    </p></li><li>Коли обсяг роботи кожної задачі виконуватиметься навмисно змінено або неможливо передбачити, може бути корисно застосувати підхід до набору <b><i>планувальника</i></b>. Коли кожне завдання закінчує свою роботу, він отримує нову частину з черги роботи.
 <p>
 <img src="./Introduction to Parallel Computing_files/schedulerTaskPool.gif">
 </p><p>
-    </p></li><li>Ultimately, it may become necessary to design an algorithm which detects and 
-        handles load imbalances as they occur dynamically within the code.
+    </p></li><li>Зрештою, може стати необхідним розробляти алгоритм, який визначає і управляє дисбалансом навантаження, оскільки він відбувається динамічно в межах коду.
     </li></ul>
 </li></ul>
 
@@ -2364,72 +2173,62 @@ Y = X**2      Y = X**3
 <a name="DesignGranularity"> <br><br> </a>
 <table border="1" cellpadding="5" cellspacing="0" width="100%">
 <tbody><tr><td bgcolor="#98ABCE">
-<span class="heading1">Designing Parallel Programs</span></td>
+<span class="heading1">Розробка паралельних програм</span></td>
 </tr></tbody></table>
-</p><h2>Granularity</h2>
+</p><h2>Гранулярність</h2>
 
 <img src="./Introduction to Parallel Computing_files/arrowBullet.gif" align="top" hspace="3">
-<span class="heading3">Computation / Communication Ratio:</span>
+<span class="heading3">Обчислення / коефіцієнт зв'язку:</span>
 <ul>
 <p>
-</p><li>In parallel computing, granularity is a qualitative measure of the ratio
-    of computation to communication. 
+</p><li>При паралельних обчисленнях деталізація є якісною мірою співвідношення обчислень до комунікації.
 <p>
-</p></li><li>Periods of computation are typically separated from periods of 
-    communication by synchronization events.
+</p></li><li>Періоди обчислення, як правило, відокремлюються від періодів спілкування по подій синхронізації.
 </li></ul>
 <p>
 
 <img src="./Introduction to Parallel Computing_files/arrowBullet.gif" align="top" hspace="3">
-<span class="heading3">Fine-grain Parallelism:</span>
+<span class="heading3">Дрібнозернисті паралелізм:</span>
 </p><p>
 <table border="0" cellpadding="0" cellspacing="0">
 <tbody><tr valign="top">
 <td> <ul> 
      <p>
-     </p><li>Relatively small amounts of computational work are done between 
-         communication events 
+     </p><li>Порівняно невеликі обсяги обчислювальних робіт виконуються між подій зв'язку 
      <p>
-     </p></li><li>Low computation to communication ratio  
+     </p></li><li>Низькі обчислення до співвідношення зв'язку 
      <p>
-     </p></li><li>Facilitates load balancing 
+     </p></li><li>Сприяє збалансуванню навантаження
      <p>
-     </p></li><li>Implies high communication overhead and less opportunity for
-         performance enhancement
+     </p></li><li>Мається на увазі високі комунікаційні витрати та менша можливість для підвищення продуктивності
      <p>
-     </p></li><li>If granularity is too fine it is possible that the overhead
-         required for communications and synchronization between tasks
-         takes longer than the computation. 
+     </p></li><li>Якщо деталізація занадто добре, можливо, що накладні витрати, необхідні для зв'язку та синхронізації між завданнями, тривають довше, ніж обчислення. 
      </li></ul>
 <p>
 
 <img src="./Introduction to Parallel Computing_files/arrowBullet.gif" align="top" hspace="3">
-<span class="heading3">Coarse-grain Parallelism:</span>
+<span class="heading3">Паралелізм грубозернистості:</span>
      </p><ul>
      <p>
-     </p><li>Relatively large amounts of computational work are done between  
-         communication/synchronization events 
+     </p><li>Відносно великі обсяги обчислювальних робіт виконуються між подіями зв'язку / синхронізації
      <p>
-     </p></li><li>High computation to communication ratio
+     </p></li><li>Високі обчислення до співвідношення зв'язку
      <p>
-     </p></li><li>Implies more opportunity for performance increase
+     </p></li><li>Мається на увазі більша можливість для підвищення продуктивності
      <p>
-     </p></li><li>Harder to load balance efficiently
+     </p></li><li>Важче ефективно завантажувати баланс
      </li></ul>
 <p>
 
 <img src="./Introduction to Parallel Computing_files/arrowBullet.gif" align="top" hspace="3">
-<span class="heading3">Which is Best?</span>
+<span class="heading3">Який найкращий?</span>
 </p><ul>
 <p>
-</p><li>The most efficient granularity is dependent on the algorithm and the 
-    hardware environment in which it runs.
+</p><li>Найбільш ефективна грануляція залежить від алгоритму та апаратного середовища, в якому він працює.
 <p>
-</p></li><li>In most cases the overhead associated with communications and 
-    synchronization is high relative to execution speed
-    so it is advantageous to have coarse granularity.
+</p></li><li>У більшості випадків накладні витрати, пов'язані з комунікацією та синхронізацією, є високими відносно швидкості виконання, тому перевага полягає в тому, щоб груба гранулярність була.
 <p>
-</p></li><li>Fine-grain parallelism can help reduce overheads due to load imbalance.
+</p></li><li>Точний паралелізм може допомогти зменшити накладні витрати через незбалансованість навантаження.
 </li></ul></td>
 <td><img src="./Introduction to Parallel Computing_files/granularity2.gif" align="right" hspace="20">
 <img src="./Introduction to Parallel Computing_files/granularity3.gif" align="right" hspace="20" vspace="30"></td>
@@ -2440,71 +2239,59 @@ Y = X**2      Y = X**3
 <a name="DesignIO"> <br><br> </a>
 <table border="1" cellpadding="5" cellspacing="0" width="100%">
 <tbody><tr><td bgcolor="#98ABCE">
-<span class="heading1">Designing Parallel Programs</span></td>
+<span class="heading1">Розробка паралельних програм</span></td>
 </tr></tbody></table>
 </p><h2>I/O</h2>
 
 <img src="./Introduction to Parallel Computing_files/memoryAccessTimes.gif" width="555" height="258" align="right" hspace="25">
 <img src="./Introduction to Parallel Computing_files/arrowBullet.gif" align="top" hspace="3">
-<span class="heading3">The Bad News:</span>
+<span class="heading3">Погані новини:</span>
 <p>
 </p><ul>
-<li>I/O operations are generally regarded as inhibitors to parallelism. 
+<li>Операції введення-виведення, як правило, розглядаються як інгібітори паралелізму.
 <p>
-</p></li><li>I/O operations require orders of magnitude more time than memory operations.
+</p></li><li>Операції введення-виведення потребують набагато більше часу, ніж операції пам'яті.
 <p>
-</p></li><li>Parallel I/O systems may be immature or not available for all platforms.
+</p></li><li>Паралельні системи вводу-виводу можуть бути незрілими або недоступними для всіх платформ.
 <p>
-</p></li><li>In an environment where all tasks see the same file space, write
-    operations can result in file overwriting.
+</p></li><li>У середовищі, де всі завдання мають однакове розміщення файлів, операції запису можуть призвести до перезапису файлів.
 <p>
-</p></li><li>Read operations can be affected by the file server's ability to handle
-    multiple read requests at the same time.
+</p></li><li>Функція читання може впливати на спроможність файлового сервера обробляти декілька запитів для читання одночасно.
 <p>
-</p></li><li>I/O that must be conducted over the network (NFS, non-local) can cause
-    severe bottlenecks and even crash file servers.
+</p></li><li>Введення / виводу, яке повинно проводитись через мережу (NFS, не локальне), може спричинити серйозні вузькі місця та навіть збій файлових серверів.
 </li></ul>
 <p>
 
 <img src="./Introduction to Parallel Computing_files/arrowBullet.gif" align="top" hspace="3">
-<span class="heading3">The Good News:</span>
+<span class="heading3">Добрі новини:</span>
 </p><ul>
 <p>
-</p><li>Parallel file systems are available.  For example:
+</p><li>Паралельні файлові системи доступні. Наприклад:
     <ul>
-    <li>GPFS: General Parallel File System (IBM). Now called IBM Spectrum Scale.
-    </li><li>Lustre: for Linux clusters (Intel)
-    </li><li>HDFS: Hadoop Distributed File System (Apache)
-    </li><li>PanFS: Panasas ActiveScale File System for Linux clusters (Panasas,
-        Inc.)
-    </li><li>And more - see        
+    <li>GPFS: загальна паралельна файлова система (IBM). Тепер називається спектромова шкала IBM.
+    </li><li>Lustre: для кластерів Linux (Intel)
+    </li><li>HDFS: розподілена файлова система Hadoop (Apache)
+    </li><li>PanFS: Panasas ActiveScale файлова система для кластерів Linux (Panasas, Inc.)
+    </li><li>І ще - див.      
 <a href="http://en.wikipedia.org/wiki/List_of_file_systems#Distributed_parallel_file_systems" target="_blank">http://en.wikipedia.org/wiki/List_of_file_systems#Distributed_parallel_file_systems</a>
     </li></ul>
 <p>
-</p></li><li>The parallel I/O programming interface specification for MPI has been
-    available since 1996 as part of MPI-2. Vendor and "free" implementations 
-    are now commonly available.
+</p></li><li>Специфікація інтерфейсу програмування для паралельного введення / виводу для MPI була доступна з 1996 року як частина MPI-2. Постачальники та "вільні" реалізації в даний час широко доступні.
 <p>
-</p></li><li>A few pointers:
+</p></li><li>Кілька вказівників:
     <ul>
     <p>
-    </p><li>Rule #1: Reduce overall I/O as much as possible
+    </p><li>Правило №1: максимально зменшити загальне введення / виведення
     <p>
-    </p></li><li>If you have access to a parallel file system, use it.
+    </p></li><li>Якщо у вас є доступ до паралельної файлової системи, використовуйте її.
     <p>
-    </p></li><li>Writing large chunks of data rather than small chunks is usually
-        significantly more efficient.
+    </p></li><li>Запис великих шматків даних, а не невеликих шматочків зазвичай значно ефективніший.
     <p>
-    </p></li><li>Fewer, larger files performs better than many small files.
+    </p></li><li>Менше, більші файли виконують краще багатьох малих файлів.
     <p>
-    </p></li><li>Confine I/O to specific serial portions of the job, and then use
-        parallel communications to distribute data to parallel tasks.
-        For example, Task 1 could read an input file and then communicate
-        required data to other tasks.  Likewise, Task 1 could perform
-        write operation after receiving required data from all other tasks.
+    </p></li><li>Обмежте введення / виводу певні послідовні частини завдання, а потім використовуйте паралельне з'єднання для розповсюдження даних для паралельних завдань. Наприклад, Завдання 1 може читати вхідний файл, а потім передавати необхідні дані до інших завдань. Крім того, Завдання 1 могла виконувати операцію запису після отримання необхідних даних з усіх інших завдань.
     <p>
-    </p></li><li>Aggregate I/O operations across tasks - rather than having many tasks
-        perform I/O, have a subset of tasks perform it.
+    </p></li><li>Сукупні операції вводу-виводу в різних задачах - замість того, щоб виконувати багато завдань введення / виводу, вони виконують декілька завдань.
      </li></ul>
 </li></ul>
 
@@ -2513,40 +2300,37 @@ Y = X**2      Y = X**3
 <a name="DesignDebug"> <br><br> </a>
 <table border="1" cellpadding="5" cellspacing="0" width="100%">
 <tbody><tr><td bgcolor="#98ABCE">
-<span class="heading1">Designing Parallel Programs</span></td>
+<span class="heading1">Розробка паралельних програм</span></td>
 </tr></tbody></table>
-<h2>Debugging</h2>
+<h2>Налагодження</h2>
 
 <ul>
 <p>
-</p><li>Debugging parallel codes can be incredibly difficult, particularly as codes
-    scale upwards.
+</p><li>Налагодження паралельних кодів може бути надзвичайно важким, особливо, коли коди масштабуються вгору.
 <p>
-</p></li><li>The good news is that there are some excellent debuggers available to assist:
+</p></li><li>Хороша новина полягає в тому, що є кілька чудових відладчиків, які допомагають:
     <ul>
-    <li>Threaded - pthreads and OpenMP
+    <li>Threaded -  pthreads та OpenMP
     </li><li>MPI
-    </li><li>GPU / accelerator
+    </li><li>GPU / акселератор
     </li><li>Hybrid
     </li></ul>
 <p>
-</p></li><li>Livermore Computing users have access to several parallel debugging tools
-    installed on LC's clusters:
+</p></li><li>Користувачі Livermore Computing мають доступ до кількох паралельних налагоджувальних засобів, встановлених на кластері LC:
     <ul>
-    <li>TotalView from RogueWave Software
-    </li><li>DDT from Allinea
-    </li><li>Inspector from Intel
-    </li><li>Stack Trace Analysis Tool (STAT) - locally developed
+    <li>TotalView від RogueWave Software
+    </li><li>DDT від Allinea
+    </li><li>Інспектор від Intel
+    </li><li>Інструмент аналізу трасування стеку (STAT) - локально розроблений
     </li></ul>
 <p>
-</p></li><li>All of these tools have a learning curve associated with them - some more than
-    others.
+</p></li><li>Всі ці інструменти мають навчальну криву, пов'язану з ними - трохи більше, ніж інші.
 <p>
-</p></li><li>For details and getting started information, see:
+</p></li><li>Докладнішу інформацію та інформацію про початок роботи див.
     <ul>
-    <li>LC's web pages at <a href="https://hpc.llnl.gov/software/development-environment-software" target="_blank">
+    <li>Веб-сторінки LC за адресою <a href="https://hpc.llnl.gov/software/development-environment-software" target="_blank">
 https://hpc.llnl.gov/software/development-environment-software</a>
-    </li><li>TotalView tutorial:  <a href="https://computing.llnl.gov/tutorials/totalview/" target="_blank">https://computing.llnl.gov/tutorials/totalview/</a>
+    </li><li>Підручник з TotalView:  <a href="https://computing.llnl.gov/tutorials/totalview/" target="_blank">https://computing.llnl.gov/tutorials/totalview/</a>
     </li></ul>
 <p>
 <img src="./Introduction to Parallel Computing_files/debug1.gif" width="1000" height="509">
@@ -2557,24 +2341,21 @@ https://hpc.llnl.gov/software/development-environment-software</a>
 <a name="DesignPerformance"> <br><br> </a>
 <table border="1" cellpadding="5" cellspacing="0" width="100%">
 <tbody><tr><td bgcolor="#98ABCE">
-<span class="heading1">Designing Parallel Programs</span></td>
+<span class="heading1">Розробка паралельних програм</span></td>
 </tr></tbody></table>
-<h2>Performance Analysis and Tuning</h2>
+<h2>Аналіз продуктивності та настройка</h2>
 
 <ul>
 <p>
-</p><li>As with debugging, analyzing and tuning parallel program performance
-    can be much more challenging than for serial programs.
+</p><li>Як і при налагодженні, аналіз і настройка роботи паралельної програми може бути набагато складнішим, ніж для серійних програм.
 <p>
-</p></li><li>Fortunately, there are a number of excellent tools for parallel program
-    performance analysis and tuning.
+</p></li><li>На щастя, існує цілий ряд відмінних інструментів для паралельного аналізу продуктивності та налаштування.
 <p>
-</p></li><li>Livermore Computing users have access to several such tools, most of which
-    are available on all production clusters.
+</p></li><li>Користувачі Livermore Computing мають доступ до кількох таких інструментів, більшість з яких доступні для всіх виробничих кластерів.
 <p>
-</p></li><li>Some starting points for tools installed on LC systems: 
+</p></li><li>Деякі вихідні точки для інструментів, встановлених на систем LC:
     <ul>
-    <li>LC's web pages at <a href="https://hpc.llnl.gov/software/development-environment-software" target="_blank">
+    <li>Веб-сторінки LC за адресою <a href="https://hpc.llnl.gov/software/development-environment-software" target="_blank">
 https://hpc.llnl.gov/software/development-environment-software</a>
     </li><li>TAU:
         <a href="http://www.cs.uoregon.edu/research/tau/docs.php" target="_blank">http://www.cs.uoregon.edu/research/tau/docs.php</a>
@@ -2613,25 +2394,24 @@ https://hpc.llnl.gov/software/development-environment-software</a>
 <a name="Examples"> <br><br> </a><a name="ExamplesArray"> </a>
 <table border="1" cellpadding="5" cellspacing="0" width="100%">
 <tbody><tr><td bgcolor="#98ABCE">
-<span class="heading1">Parallel Examples</span></td>
+<span class="heading1">Паралельні приклади</span></td>
 </tr></tbody></table>
-<h2>Array Processing</h2>
+<h2>Обробка масивів</h2>
 
 <table border="0" cellpadding="0" cellspacing="0">
 <tbody><tr valign="top">
 <td>
 <ul>
 <p>
-</p><li>This example demonstrates calculations on 2-dimensional array elements; a 
-    function is evaluated on each array element.
+</p><li>Цей приклад демонструє розрахунки на 2-мірних елементах масиву; функція оцінюється на кожен елемент масиву.
 <p>
-</p></li><li>The computation on each array element is independent from other array elements.
+</p></li><li>Обчислення на кожен елемент масиву незалежно від інших елементів масиву.
 <p>
-</p></li><li>The problem is computationally intensive.
+</p></li><li>Проблема є обчислювальною інтенсивністю.
 <p>
-</p></li><li>The serial program calculates one element at a time in sequential order.
+</p></li><li>Серійна програма розраховує один елемент одночасно в послідовному порядку.
 <p>
-</p></li><li>Serial code could be of the form:
+</p></li><li>Серійний код може мати форму:
 <p>
 <table border="1" cellpadding="5" cellspacing="0">
 <tbody><tr><td><pre><b>
@@ -2644,14 +2424,14 @@ end do
 </b></pre>
 </td></tr></tbody></table>
 </p><p>
-</p></li><li>Questions to ask:
+</p></li><li>Питання для запитання:
 <ul>
-<li>Is this problem able to be parallelized?
-</li><li>How would the problem be partitioned?
-</li><li>Are communications needed?
-</li><li>Are there any data dependencies?
-</li><li>Are there synchronization needs?
-</li><li>Will load balancing be a concern?
+<li>Чи можна розпаралелювати цю проблему?
+</li><li>Як буде розбита проблема?
+</li><li>Чи потрібні комунікації?
+</li><li>Чи існують які-небудь дані залежностей?
+</li><li>Чи потрібна синхронізація?
+</li><li>Чи буде балансування навантаження бути проблемою?
 </li></ul>
 </li></ul>
 </td>
@@ -2662,36 +2442,28 @@ end do
 
 
 <p></p><hr><p>
-</p><h2>Array Processing <br>Parallel Solution 1</h2>
+</p><h2>Паралельне рішення <br>обробки масивів 1</h2>
 
 <ul>
 <p>
 <img src="./Introduction to Parallel Computing_files/array_proc2.gif" width="297" height="247" hspace="20" align="right">
-</p><li>The calculation of elements is independent of one another - leads to an 
-    embarrassingly parallel solution.
+</p><li>Розрахунок елементів незалежно один від одного - призводить до незрозуміло паралельного рішення.
 <p>
-</p></li><li>Arrays elements are evenly distributed so that each process owns a portion of 
-    the array (subarray).
+</p></li><li>Елементи масиву рівномірно розподілені таким чином, що кожен процес володіє частиною масиву (subarray).
 <ul>
 <p>
-</p><li>Distribution scheme is chosen for efficient memory access; e.g. unit stride 
-    (stride of 1) through the subarrays.  Unit stride maximizes cache/memory usage.
+</p><li>Схема розподілу вибирається для ефективного доступу до пам'яті; наприклад, одиничний кроком (кроком 1) через сусіди. Stride одиниці максимізує використання кеша / пам'яті.
 <p>
-</p></li><li>Since it is desirable to have unit stride through the subarrays, the
-    choice of a distribution scheme depends on the programming language.
-    See the <a href="https://computing.llnl.gov/tutorials/parallel_comp/#distributions">Block - Cyclic Distributions Diagram</a>
-    for the options.
+</p></li><li>Оскільки бажано пройти одиницю через субари, вибір схеми розподілу залежить від мови програмування. Див. <a href="https://computing.llnl.gov/tutorials/parallel_comp/#distributions"> Діаграму блок-циклічних розподілів</a>
+    для параметрів.
 </li></ul>
 <p>
-</p></li><li>Independent calculation of array elements ensures there is no
-    need for communication or synchronization between tasks.
+</p></li><li>Незалежний розрахунок елементів масиву забезпечує відсутність необхідності спілкування або синхронізації завдань.
 <p>
-</p></li><li>Since the amount of work is evenly distributed across processes, there should
-    not be load balance concerns.
+</p></li><li>Оскільки обсяг робіт рівномірно розподіляється між процесами, не повинно бути проблем з навантаженням.
 <p>
-</p></li><li>After the array is distributed, each task executes the portion of the loop 
-    corresponding to the data it owns. <br>For example, both Fortran (column-major)
-    and C (row-major) block distributions are shown:
+</p></li><li>Після розповсюдження масиву кожне завдання виконує частину циклу, відповідну до даних, якими вона володіє. 
+Наприклад, показано розподіл блоків як Fortran (column-major), так і C (row-major).
 <p>
 <table border="1" cellpadding="5" cellspacing="0">
 <tbody><tr valign="top">
@@ -2713,29 +2485,24 @@ for i (i = <font color="red">mystart</font>; i &lt; <font color="red">myend</fon
 </b></pre></td>
 </tr></tbody></table>
 </p><p>
-</p></li><li>Notice that only the outer loop variables are different from the serial 
-    solution.
+</p></li><li>Зверніть увагу, що лише змінні зовнішнього циклу відрізняються від серійного рішення.
 </li></ul>
 <p>
 
 <img src="./Introduction to Parallel Computing_files/arrowBullet.gif" align="top" hspace="3">
-<span class="heading3">One Possible Solution:</span>
+<span class="heading3">Одне з можливих рішень:</span>
 </p><ul>
 <p>
-</p><li>Implement as a Single Program Multiple Data (SPMD) model - every task executes
-    the same program.
+</p><li>Впровадити в якості моделі єдиної програми кількох даних (SPMD) - кожне завдання виконує ту ж програму.
 <p>
-</p></li><li>Master process initializes array, sends info to worker processes and receives
-    results.
+</p></li><li>Майстер-процес ініціалізує масив, передає інформацію робочим процесам і отримує результати.
 <p>
-</p></li><li>Worker process receives info, performs its share of computation and sends 
-    results to master.
+</p></li><li>Робочий процес отримує інформацію, виконує свою частку обчислень і відправляє результати для оволодіння.
 <p>
-</p></li><li>Using the Fortran storage scheme, perform block distribution of the array.
+</p></li><li>Використовуючи схему зберігання Fortran, виконуйте блоковий розподіл масиву.
 <p>
-</p></li><li>Pseudo code solution:
-    <b><font color="red">red</font></b> highlights changes for 
-    parallelism.
+</p></li><li>Псевдокодове рішення:
+    <b><font color="red">червоний</font></b> виділяє зміни для паралелізму.
 <p>
 <table border="1" cellpadding="5" cellspacing="0">
 <tbody><tr><td><pre><b><font color="red">
@@ -2769,66 +2536,59 @@ endif
 <p>
 
 <img src="./Introduction to Parallel Computing_files/arrowBullet.gif" align="top" hspace="3">
-<span class="heading3">Example Programs:</span>
+<span class="heading3">Приклади програм:</span>
 </p><ul>
-<li>MPI Program in C: &nbsp;
+<li>Програма MPI в C: &nbsp;
 <font size="-1"><b><input type="button" value="mpi_array.c" onclick="popUp(&#39;../mpi/samples/C/mpi_array.c&#39;)"></b></font>
 <p>
-</p></li><li>MPI Program in Fortran: &nbsp;
+</p></li><li>Програма MPI в Фортран: &nbsp;
 <font size="-1"><b><input type="button" value="mpi_array.f" onclick="popUp(&#39;../mpi/samples/Fortran/mpi_array.f&#39;)"></b></font>
 </li></ul>
 
 <p></p><hr><p>
-</p><h2>Array Processing <br>Parallel Solution 2: Pool of Tasks</h2>
+</p><h2>Parallel Solution 2:<br>обробка масивів завдань</h2>
 
 <ul>
 <p>
-</p><li>The previous array solution demonstrated static load balancing: 
+</p><li>У попередньому рішенні масиву показано статичне балансування навантаження: 
     <ul>
-    <li>Each task has a fixed amount of work to do 
-    </li><li>May be significant idle time for faster or more lightly loaded 
-        processors - slowest tasks determines overall performance.
+    <li>Кожне завдання має виконувати фіксовану кількість робіт 
+    </li><li>Може бути значним часом простою для більш швидких або більш легко завантажених процесорів - найповільніші завдання визначають загальну продуктивність.
     </li></ul>
 <p>
-</p></li><li>Static load balancing is not usually a major concern if all tasks
-    are performing the same amount of work on identical machines. 
+</p></li><li>Статичне балансування навантаження зазвичай не є основним завданням, якщо всі завдання виконують однакову кількість роботи на однакових машинах. 
 <p>
-</p></li><li>If you have a load balance problem (some tasks work faster than
-    others), you may benefit by using a "pool of tasks"
-    scheme.
+</p></li><li>Якщо у вас є проблема балансу навантаження (деякі завдання працюють швидше, ніж інші), ви можете скористатися схемою "пул завдань".
 </li></ul>
 <p>
 
 <img src="./Introduction to Parallel Computing_files/arrowBullet.gif" align="top" hspace="3">
-<span class="heading3">Pool of Tasks Scheme:</span>
+<span class="heading3">Схема пулу завдань:</span>
 </p><p>
 </p><ul>
 <p>
-</p><li>Two processes are employed
+</p><li>Використовуються два процеси
 <p>
-Master Process: 
+Магістерський процес: 
     </p><ul type="circle">
-    <li>Holds pool of tasks for worker processes to do
-    </li><li>Sends worker a task when requested
-    </li><li>Collects results from workers
+    <li>Тримає пул завдань для працівників процесів зробити
+    </li><li>Відправляє працівника завдання за запитом
+    </li><li>Збирає результати працівників
     </li></ul>
 <p>
-Worker Process: repeatedly does the following
+Робочий процес: багаторазово робить наступне
     </p><ul type="circle">
-    <li>Gets task from master process
-    </li><li>Performs computation 
-    </li><li>Sends results to master
+    <li>Отримує завдання від майстер-процесу
+    </li><li>Виконає обчислення
+    </li><li>Відправляє результати майстеру
     </li></ul>
 <p>
-</p></li><li>Worker processes do not know before runtime which portion of array
-    they will handle or how many tasks they will perform.
+</p></li><li>Робочі процеси не знають перед виконанням, яку частину масиву вони оброблятимуть, або скільки завдань вони виконають.
 <p>
-</p></li><li>Dynamic load balancing occurs at run time: the faster tasks will 
-    get more work to do.     
+</p></li><li>Динамічне завантаження балансу відбувається під час виконання: швидше завданням буде потрібно більше роботи.    
 <p>
-</p></li><li>Pseudo code solution:
-    <font color="red"><b>red</b></font> highlights changes for 
-    parallelism.
+</p></li><li>Псевдокодове рішення:
+    <font color="red"><b>червоний</b></font> виділяє зміни для паралелізму.
 <p>
 <table border="1" cellpadding="5" cellspacing="0">
 <tbody><tr><td><pre><b><font color="red">
@@ -2860,18 +2620,14 @@ endif
 <p>
 
 <img src="./Introduction to Parallel Computing_files/arrowBullet.gif" align="top" hspace="3">
-<span class="heading3">Discussion:</span>
+<span class="heading3">Обговорення:</span>
 </p><ul>
 <p>
-</p><li>In the above pool of tasks example, each task calculated an individual
-    array element as a job.  The computation to communication ratio is 
-    finely granular.
+</p><li>Наприклад, у наведеному вище пулі завдань кожне завдання розрахувало окремий елемент масиву як завдання. Обчислення до коефіцієнта зв'язку є дрібно гранульованим.
 <p>
-</p></li><li>Finely granular solutions incur more communication overhead in order
-    to reduce task idle time.
+</p></li><li>Дрібно гранульовані рішення потребують додаткових витрат на зв'язок, щоб зменшити час простою роботи.
 <p>
-</p></li><li>A more optimal solution might be to distribute more work with each job.
-    The "right" amount of work is problem dependent.
+</p></li><li>Більш оптимальним рішенням може бути поширення більше роботи з кожною роботою. "Правильний" обсяг роботи залежить від проблеми.
 </li></ul>
 
 
@@ -2880,28 +2636,27 @@ endif
 <a name="ExamplesPI"> <br><br> </a>
 <table border="1" cellpadding="5" cellspacing="0" width="100%">
 <tbody><tr><td bgcolor="#98ABCE">
-<span class="heading1">Parallel Examples</span></td>
+<span class="heading1">Паралельні приклади</span></td>
 </tr></tbody></table>
-<h2>PI Calculation</h2> 
+<h2>Розрахунок PI</h2> 
 
 <table border="0" cellspacing="0" cellpadding="0">
 <tbody><tr valign="top">
 <td>
 <ul>
-<li>The value of PI can be calculated in various ways. Consider the Monte Carlo  
-    method of approximating PI: 
+<li>Значення PI може бути розраховане різними способами. Розглянемо метод Монте-Карло для наближення PI:
 <ul> 
-<li>Inscribe a circle with radius <b>r</b> in a square with side length of <b>2<i>r</i></b> 
-</li><li>The area of the circle is <b>Πr<sup>2</sup></b> and the area of the square is <b>4r<sup>2</sup></b> 
-</li><li>The ratio of the area of the circle to the area of the square is: <br><b>Πr<sup>2</sup> / 4r<sup>2</sup> = Π / 4</b> 
-</li><li>If you randomly generate <b>N</b> points inside the square, approximately <br><b>N * Π / 4</b> of those points (<b>M</b>) should fall inside the circle. </li><li><b>Π</b> is then approximated as: 
+<li>Вставте колі з радіусом <b>r</b> в квадрат із довжиною сторони <b>2<i>p</i></b> 
+</li><li>Площа окружності становить <b>Πr<sup>2</sup></b> площа квадрата <b>4r<sup>2</sup></b> 
+</li><li>Співвідношення площі кола до площі квадрата становить: <br><b>Πr<sup>2</sup> / 4r<sup>2</sup> = Π / 4</b> 
+</li><li>Якщо ви довільно генеруєте <b>N</b> балів усередині квадрата, приблизно <br><b>N * Π / 4</b> цих точок (<b>M</b>) повинно потрапляти всередину кола. </li><li><b>Π</b> потім аппроксиміруется як:  
 <br><b>N * Π / 4 = M 
 <br>Π / 4 = M / N 
 <br>Π = 4 * M / N</b> 
-</li><li>Note that increasing the number of points generated improves the approximation.
+</li><li>Зверніть увагу, що збільшення кількості отриманих балів покращує наближення.
 </li></ul>
 <p>
-</p></li><li>Serial pseudo code for this procedure:
+</p></li><li>Послідовний псевдокод для цієї процедури:
 <p>
 <table border="1" cellpadding="5" cellspacing="0">
 <tbody><tr><td><pre><b>
@@ -2923,17 +2678,16 @@ PI = 4.0*circle_count/npoints
 
 
 </p><p>
-</p></li><li>The problem is computationally intensive -  most of the time is spent executing 
-    the loop
+</p></li><li>Проблема є обчислювальною інтенсивністю - більша частина часу витрачається на виконання циклу
 <p>
-</p></li><li>Questions to ask:
+</p></li><li>Питання для запитання:
 <ul>
-<li>Is this problem able to be parallelized?
-</li><li>How would the problem be partitioned?
-</li><li>Are communications needed?
-</li><li>Are there any data dependencies?
-</li><li>Are there synchronization needs?
-</li><li>Will load balancing be a concern?
+<li>Чи можна розпаралелювати цю проблему?
+</li><li>Як буде розбита проблема?
+</li><li>Чи потрібні комунікації?
+</li><li>Чи існують які-небудь дані залежностей?
+</li><li>Чи потрібна синхронізація?
+</li><li>Чи буде балансування навантаження бути проблемою?
 </li></ul>
 </li></ul>
 </td>
@@ -2943,31 +2697,30 @@ PI = 4.0*circle_count/npoints
 
 
 <p></p><hr><p>
-</p><h2>PI Calculation<br>Parallel Solution</h2>
+</p><h2>PI розрахунок<br>паралельних рішень</h2>
 
 <table border="0" cellspacing="0" cellpadding="0">
 <tbody><tr valign="top">
 <td>
 <ul>
 <p>
-</p><li>Another problem that's easy to parallelize:
+</p><li>Інша проблема, яку легко розпаралелювати:
 <ul>
-<li>All point calculations are independent; no data dependencies
-</li><li>Work can be evenly divided; no load balance concerns
-</li><li>No need for communication or synchronization between tasks
+<li>Всі точні розрахунки незалежні; немає залежностей даних
+</li><li>Робота може бути розподілена рівномірно; немає проблем із завантаженням вантажу
+</li><li>Немає необхідності спілкування або синхронізації між завданнями
 </li></ul>
 <p>
-</p></li><li>Parallel strategy: 
+</p></li><li>Паралельна стратегія:
 <ul>
-<li>Divide the loop into equal portions that can be executed by the pool of tasks
-</li><li>Each task independently performs its work
-</li><li>A SPMD model is used
-</li><li>One task acts as the master to collect results and compute the value of PI
+<li>Розділіть цикл на рівних частинах, які можуть бути виконані пулом завдань
+</li><li>Кожне завдання самостійно виконує свою роботу
+</li><li>Використовується модель SPMD
+</li><li>Одне завдання виконує роль майстра для збору результатів та обчислення значення PI
 </li></ul>
 <p>
-</p></li><li>Pseudo code solution:
-    <font color="red"><b>red</b></font> highlights changes for 
-    parallelism.
+</p></li><li>Псевдокодове рішення:
+    <font color="red"><b>червоний</b></font> виділяє зміни для паралелізму.
 <p>
 <table border="1" cellpadding="5" cellspacing="0">
 <tbody><tr><td><pre><b>
@@ -3009,12 +2762,12 @@ endif
 <p>
 
 <img src="./Introduction to Parallel Computing_files/arrowBullet.gif" align="top" hspace="3">
-<span class="heading3">Example Programs:</span>
+<span class="heading3">Приклади програм:</span>
 </p><ul>
-<li>MPI Program in C: &nbsp;
+<li>Програма MPI в C: &nbsp;
 <font size="-1"><b><input type="button" value="mpi_pi_reduce.c" onclick="popUp(&#39;../mpi/samples/C/mpi_pi_reduce.c&#39;)"></b></font>
 <p>
-</p></li><li>MPI Program in Fortran: &nbsp;
+</p></li><li>Програма MPI в Фортран: &nbsp;
 <font size="-1"><b><input type="button" value="mpi_pi_reduce.f" onclick="popUp(&#39;../mpi/samples/Fortran/mpi_pi_reduce.f&#39;)"></b></font>
 </li></ul>
 
@@ -3023,7 +2776,7 @@ endif
 <a name="ExamplesHeat"> <br><br> </a>
 <table border="1" cellpadding="5" cellspacing="0" width="100%">
 <tbody><tr><td bgcolor="#98ABCE">
-<span class="heading1">Parallel Examples</span></td>
+<span class="heading1">Паралельні приклади</span></td>
 </tr></tbody></table>
 <h2>Simple Heat Equation</h2>
 
@@ -3031,28 +2784,24 @@ endif
 <tbody><tr valign="top">
 <td><ul>
 <p>
-</p><li>Most problems in parallel computing require communication among the tasks.
-    A number of common problems require communication with "neighbor" tasks.
+</p><li>Більшість проблем паралельних обчислень вимагають спілкування між завданнями. Ряд спільних проблем вимагає спілкування з "сусідами" завдань.
 <p>
-</p></li><li>The 2-D heat equation describes the temperature change over time,
-    given initial temperature distribution and boundary conditions.
+</p></li><li>2-D рівняння теплопровідності описує зміну температури з плином часу, з урахуванням початкового розподілу температури та граничних умов.
 <p>
-</p></li><li>A finite differencing scheme is employed to solve the heat equation numerically 
-    on a square region.
+</p></li><li>Для розв'язання рівняння теплопути на квадратній ділянці застосовується скінченна диференційована схема.
 <ul>
-<li>The elements of a 2-dimensional array represent the temperature at
-    points on the square.
-</li><li>The initial temperature is zero on the boundaries and high in the middle.
-</li><li>The boundary temperature is held at zero.
-</li><li>A time stepping algorithm is used.
+<li>Елементи 2-мірного масиву представляють температуру в точках на квадраті.
+</li><li>Початкова температура дорівнює нулю на кордонах і висока в середині.
+</li><li>Гранична температура зберігається в нулі.
+</li><li>Використовується алгоритм з часом.
 </li></ul>
 <p>
-</p></li><li>The calculation of an element is <b><i>dependent</i></b> upon neighbor element
+</p></li><li>Розрахунок елемента <b><i>залежить</i></b> від значень сусідніх елементів:
     values:
 <p>
 <img src="./Introduction to Parallel Computing_files/heat_equation2.gif" width="276" height="114">
 </p><p>
-</p></li><li>A serial program would contain code like:
+</p></li><li>Серійна програма міститиме код, такий як:
 <p>
 <table border="1" cellpadding="5" cellspacing="0">
 <tbody><tr><td><pre><b>
@@ -3066,14 +2815,14 @@ end do
 </b></pre>
 </td></tr></tbody></table>
 </p><p>
-</p></li><li>Questions to ask:
+</p></li><li>Питання для запитання:
 <ul>
-<li>Is this problem able to be parallelized?
-</li><li>How would the problem be partitioned?
-</li><li>Are communications needed?
-</li><li>Are there any data dependencies?
-</li><li>Are there synchronization needs?
-</li><li>Will load balancing be a concern?
+<li>Чи можна розпаралелювати цю проблему?
+</li><li>Як буде розбита проблема?
+</li><li>Чи потрібні комунікації?
+</li><li>Чи існують які-небудь дані залежностей?
+</li><li>Чи потрібна синхронізація?
+</li><li>Чи буде балансування навантаження бути проблемою? 
 </li></ul>
 </li></ul></td>
 
@@ -3083,39 +2832,32 @@ end do
 </td></tr></tbody></table>
 
 <p></p><hr><p>
-</p><h2>Simple Heat Equation<br>Parallel Solution</h2>
+</p><h2>Просте паралельне рішення<br>рівняння тепла</h2>
 <p>
 
 <img src="./Introduction to Parallel Computing_files/heat_partitioned.gif" width="300" height="301" align="right" hspace="20">
 </p><ul>
 <p>
-</p><li>This problem is more challenging, since there data dependencies, which require
-    communications and synchronization.
+</p><li>Ця проблема є складнішою, оскільки існує залежність даних, яка вимагає зв'язку та синхронізації.
 <p>
-</p></li><li>The entire array is partitioned and distributed as subarrays to all
-    tasks. Each task owns an equal portion of the total array.
+</p></li><li>Весь масив розподіляється і розподіляється як сумарний для всіх завдань. Кожне завдання володіє рівною частиною всього масиву.
 <p>
-</p></li><li>Because the amount of work is equal, load balancing should not be a concern
+</p></li><li>Оскільки обсяг роботи однаковий, балансування навантаження не повинно бути проблемою
 <p>
-</p></li><li>Determine data dependencies:
+</p></li><li>Визначення залежностей даних:
     <ul>
-    <li><a href="https://computing.llnl.gov/tutorials/parallel_comp/images/heat_interior.gif" target="W6">interior 
-        elements</a> belonging to a task are independent of other tasks
-    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/images/heat_edge.gif" target="W7">border
-         elements</a> are dependent upon
-         a neighbor task's data, necessitating communication.
+    <li><a href="https://computing.llnl.gov/tutorials/parallel_comp/images/heat_interior.gif" target="W6">елементи інтер'єру</a> що належать до завдання, не залежать від інших завдань
+    </li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/images/heat_edge.gif" target="W7">прикордонні елементи</a> залежать від даних сусіда, що вимагають зв'язку.
     </li></ul>
 <p>
-</p></li><li>Implement as an SPMD model:
+</p></li><li>Впровадити як модель SPMD:
 <ul>
-<li>Master process sends initial info to workers, and then waits
-    to collect results from all workers
-</li><li>Worker processes calculate solution within specified number of time steps,
-    communicating as necessary with neighbor processes
+<li>Майстерський процес надсилає первинну інформацію працівникам, а потім чекає, щоб збирати результати від усіх працівників
+</li><li>Робочі процеси розраховують рішення в задану кількість етапів часу, спілкуючись, коли це необхідно, з сусідніми процесами
 </li></ul>
 <p>
-</p></li><li>Pseudo code solution:
-    <font color="red"><b>red</b></font> highlights changes for parallelism.
+</p></li><li>Псевдокодове рішення:
+    <font color="red"><b>червоний</b></font> виділяє зміни для паралелізму.
 <p>
 <table border="1" cellpadding="5" cellspacing="0">
 <tbody><tr><td><pre><b><font color="red">
@@ -3148,12 +2890,12 @@ endif
 <p>
 
 <img src="./Introduction to Parallel Computing_files/arrowBullet.gif" align="top" hspace="3">
-<span class="heading3">Example Programs:</span>
+<span class="heading3">Приклади програм:</span>
 </p><ul>
-<li>MPI Program in C: &nbsp;
+<li>Програма MPI в C: &nbsp;
 <font size="-1"><b><input type="button" value="mpi_heat2D.c" onclick="popUp(&#39;../mpi/samples/C/mpi_heat2D.c&#39;)"></b></font>
 <p>
-</p></li><li>MPI Program in Fortran: &nbsp;
+</p></li><li>Програма MPI в Фортран: &nbsp;
 <font size="-1"><b><input type="button" value="mpi_heat2D.f" onclick="popUp(&#39;../mpi/samples/Fortran/mpi_heat2D.f&#39;)"></b></font>
 </li></ul>
 
@@ -3232,26 +2974,25 @@ endif
 <a name="ExamplesWave"> <br><br> </a>
 <table border="1" cellpadding="5" cellspacing="0" width="100%">
 <tbody><tr><td bgcolor="#98ABCE">
-<span class="heading1">Parallel Examples</span></td>
+<span class="heading1">Паралельні приклади</span></td>
 </tr></tbody></table>
-<h2>1-D Wave Equation</h2>
+<h2>1-D хвильове рівняння</h2>
 
 <ul>
 <p>
-</p><li>In this example, the amplitude along a uniform, vibrating string is 
-    calculated after a specified amount of time has elapsed.
+</p><li>У цьому прикладі амплітуда вздовж рівномірної вібраційної струни обчислюється після того, як пройшло певну кількість часу.
 <p>
-</p></li><li>The calculation involves:
+</p></li><li>Розрахунок передбачає:
     <ul>
-    <li>the amplitude on the y axis
-    </li><li>i as the position index along the x axis
-    </li><li>node points imposed along the string
-    </li><li>update of the amplitude at discrete time steps. 
+    <li>амплітуда на осі y
+    </li><li>i як індекс позиції вздовж осі x
+    </li><li>вузлові точки, накладені вздовж струни
+    </li><li>оновлення амплітуди на дискретних етапах часу.
     </li></ul>
 <p>
 <img src="./Introduction to Parallel Computing_files/wave3.gif">
 </p><p>
-</p></li><li>The equation to be solved is the one-dimensional wave equation: 
+</p></li><li>Рівняння, яке потрібно вирішити, - одномірне хвильове рівняння:
 <p>
 <table border="1" cellpadding="5" cellspacing="0">
 <tbody><tr valign="top">
@@ -3261,55 +3002,47 @@ endif
 </b></span></pre></td>
 </tr></tbody></table>
 </p><p>
-where c is a constant
+де c - константа
 </p><p>
-</p></li><li>Note that amplitude will depend on previous timesteps (t, t-1) and  
-    neighboring points (i-1, i+1).  
+</p></li><li>Зверніть увагу, що амплітуда буде залежати від попередніх кроків (t, t-1) та сусідніх точок (i-1, i + 1).  
 <p>
-</p></li><li>Questions to ask:
+</p></li><li>Питання для запитання:
 <ul>
-<li>Is this problem able to be parallelized?
-</li><li>How would the problem be partitioned?
-</li><li>Are communications needed?
-</li><li>Are there any data dependencies?
-</li><li>Are there synchronization needs?
-</li><li>Will load balancing be a concern?
+<li>Чи можна розпаралелювати цю проблему?
+</li><li>Як буде розбита проблема?
+</li><li>Чи потрібні комунікації?
+</li><li>Чи існують які-небудь дані залежностей?
+</li><li>Чи потрібна синхронізація?
+</li><li>Чи буде балансування навантаження бути проблемою?
 </li></ul>
 </li></ul>
 
 <p></p><hr><p> 
-</p><h2>1-D Wave Equation<br>Parallel Solution</h2>
+</p><h2>Паралельне рішення<br>1-D хвильового рівняння</h2>
 
 <ul>
 <p>
-</p><li>This is another example of a problem involving data dependencies. A parallel 
-    solution will involve communications and synchronization.
+</p><li>Це ще один приклад проблеми із залежністю даних. Паралельне рішення передбачає зв'язок та синхронізацію.
 <p>
-</p></li><li>The entire amplitude array is partitioned and distributed as subarrays to all 
-    tasks. Each task owns an equal portion of the total array.
+</p></li><li>Весь амплітудний масив розподіляється і розподіляється як субарні для всіх завдань. Кожне завдання володіє рівною частиною всього масиву.
 <p>
-</p></li><li>Load balancing: all points require equal work, so the points should 
-    be divided equally 
+</p></li><li>Балансування навантаження: всі пункти вимагають рівної роботи, тому точки повинні бути розділені рівномірно
 <p>
-</p></li><li>A block decomposition would have the work partitioned into the number 
-    of tasks as chunks, allowing each task to own mostly contiguous data points.
+</p></li><li>Розбиття на блок буде розбивати роботу на кількість завдань у вигляді фрагментів, що дозволяє кожному завданням володіти переважно сусідніми точками даних.
 <p>
-</p></li><li>Communication need only occur on data borders.  The larger the block size
-    the less the communication. 
+</p></li><li>Зв'язок має відбуватися тільки на межі даних. Чим більше розмір блоку, тим менше спілкування. 
 <p>
 <img src="./Introduction to Parallel Computing_files/wave4.gif">
 
 </p><p>
-</p></li><li>Implement as an SPMD model:
+</p></li><li>Впровадити як модель SPMD:
 <ul>
-<li>Master process sends initial info to workers, and then waits
-    to collect results from all workers
-</li><li>Worker processes calculate solution within specified number of time steps,
-    communicating as necessary with neighbor processes
+<li>Майстерський процес надсилає первинну інформацію працівникам, а потім чекає, щоб збирати результати від усіх працівників
+</li><li>Робочі процеси розраховують рішення в задану кількість етапів часу, спілкуючись, коли це необхідно, з сусідніми процесами
 </li></ul>
 <p>
-</p></li><li>Pseudo code solution:
-    <font color="red"><b>red</b></font> highlights changes for parallelism.
+</p></li><li>Псевдокодове рішення:
+    <font color="red"><b>червоний</b></font> виділяє зміни для паралелізму.
 <p>
 <table border="1" cellpadding="5" cellspacing="0">
 <tbody><tr><td><pre><b><font color="red">
@@ -3359,12 +3092,12 @@ endif </font>
 <p>
 
 <img src="./Introduction to Parallel Computing_files/arrowBullet.gif" align="top" hspace="3">
-<span class="heading3">Example Programs:</span>
+<span class="heading3">Приклади програм:</span>
 </p><ul>
-<li>MPI Program in C: &nbsp;
+<li>Програма MPI в C: &nbsp;
 <font size="-1"><b><input type="button" value="mpi_wave.c" onclick="popUp(&#39;../mpi/samples/C/mpi_wave.c&#39;)"></b></font>
 <p>
-</p></li><li>MPI Program in Fortran: &nbsp;
+</p></li><li>Програма MPI в Фортран: &nbsp;
 <font size="-1"><b><input type="button" value="mpi_wave.f" onclick="popUp(&#39;../mpi/samples/Fortran/mpi_wave.f&#39;)"></b></font>
 </li></ul>
 
@@ -3372,20 +3105,20 @@ endif </font>
 <br><br>
 <p></p><hr><p>
 
-<b>This completes the tutorial.</b>
+<b>Це завершує навчальний посібник.</b>
 </p><p>
 <table border="0" cellpadding="0" cellspacing="0">
 <tbody><tr valign="top">
 <td><a href="https://computing.llnl.gov/tutorials/evaluation/index.html" target="evalForm">
     <img src="./Introduction to Parallel Computing_files/evaluationForm.gif"></a> &nbsp; &nbsp; &nbsp;</td>
-<td>Please complete the online evaluation form. </td>
+<td>Будь ласка, заповніть онлайн-форму для оцінки. </td>
 </tr>
 </tbody></table>
 </p><p>
-<b>Where would you like to go now?</b>
+<b>Куди ти хочеш піти зараз?</b>
 </p><ul>
-<li><a href="https://computing.llnl.gov/tutorials/agenda/index.html">Agenda</a>
-</li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#top">Back to the top</a>
+<li><a href="https://computing.llnl.gov/tutorials/agenda/index.html">Порядок денний</a>
+</li><li><a href="https://computing.llnl.gov/tutorials/parallel_comp/#top">Перейти до початку сторінки</a>
 </li></ul>
 
 <!--========================================================================-->
@@ -3393,51 +3126,40 @@ endif </font>
 <a name="References"> <br><br> </a>
 <table border="1" cellpadding="5" cellspacing="0" width="100%">
 <tbody><tr><td bgcolor="#98ABCE">
-<span class="heading1">References and More Information</span></td>
+<span class="heading1">Довідники та додаткова інформація</span></td>
 </tr></tbody></table>
 
 <ul>
-<li>Author: <a href="mailto:blaiseb@llnl.gov">Blaise Barney</a>, Livermore
-    Computing.
+<li>Автор: <a href="mailto:blaiseb@llnl.gov">Блейз Барні</a>,  Лівермор Комп'ютинг.
 <p>
-</p></li><li>A search on the WWW for "parallel programming" or "parallel computing"
-    will yield a wide variety of information.
+</p></li><li>Пошук у WWW для "паралельного програмування" або "паралельні обчислення" дасть широкий спектр інформації.
 <p>
-</p></li><li>Recommended reading:
+</p></li><li>Рекомендоване читання:
     <ul>
-    <li>"Designing and Building Parallel Programs".  Ian Foster.
+    <li>Проектування та побудова паралельних програм". Ян Фостер. 
     <br><a href="http://www.mcs.anl.gov/~itf/dbpp/" target="_blank">
         http://www.mcs.anl.gov/~itf/dbpp/</a>
-    </li><li>"Introduction to Parallel Computing". Ananth Grama, Anshul Gupta,
-        George Karypis, Vipin Kumar.
+    </li><li>"Вступ до паралельних обчислень". Анант Грэма, Аншюль Гупта, Джордж Карипіс, Віпін Кумар. 
     <br><a href="http://www-users.cs.umn.edu/~karypis/parbook/" target="_blank">
         http://www-users.cs.umn.edu/~karypis/parbook/</a>
-    </li><li>"Overview of Recent Supercomputers". A.J. van der Steen, Jack Dongarra.
+    </li><li>"Огляд недавніх суперкомп'ютерів". А. Дж. Ван дер Стин, Джек Донгара. 
     <br><a href="https://computing.llnl.gov/tutorials/parallel_comp/OverviewRecentSupercomputers.2008.pdf" target="_blank">
         OverviewRecentSupercomputers.2008.pdf</a>
     </li></ul>
 <p>
-</p></li><li>Photos/Graphics have been
-    created by the author, created by other LLNL employees, 
-    obtained from non-copyrighted, government or public domain (such as
-    http://commons.wikimedia.org/) sources,
-    or used with the permission of authors from other presentations and
-    web pages.
+</p></li><li>Фото / графіка створено автором, створеною іншими співробітниками LLNL, отриманими з джерел, не захищених авторським правом, державними або загальнодоступними джерелами (наприклад, http://commons.wikimedia.org/), або використовуються з дозволу авторів з інші презентації та веб-сторінки.
 <p>
-</p></li><li>History: These materials have evolved from the following
-    sources, some of which are no longer maintained or available:
+</p></li><li>Історія: ці матеріали складаються з наступних джерел, деякі з яких більше не підтримуються або недоступні:
     <ul>
-    <li>Tutorials developed for the Maui High Performance Computing 
-        Center's "SP Parallel Programming Workshop".
-    </li><li>Tutorials developed by the Cornell University Center for Advanced 
-        Computing (CAC), now available as Cornell Virtual Workshops at:
+    <li>Навчальні посібники розроблені для "Майстер-класу паралельного програмування SP" у Мауї високопродуктивних обчислювальних центрах.
+    </li><li>Навчальні посібники, розроблені Корнельським університетським центром передових обчислень (CAC), тепер доступні в якості віртуальних семінарів Cornell за адресою:
         <a href="https://cvw.cac.cornell.edu/topics" target="_blank">https://cvw.cac.cornell.edu/topics</a>.
     </li></ul>
 </li></ul>
 
-<!-------------------------------------------------------------------------->
+<!------------------------------------------------------------------------>
 
-<script language="JavaScript">PrintFooter("UCRL-MI-133316")</script><p></p><hr><span class="footer">https://computing.llnl.gov/tutorials/parallel_comp/<br>Last Modified: 05/05/2018 01:54:23 <a href="mailto:blaiseb@llnl.gov">blaiseb@llnl.gov</a><br>UCRL-MI-133316<p>This work was performed under the auspices of the U.S. Department of Energy by Lawrence Livermore National Laboratory under Contract DE-AC52-07NA27344.
+<script language="JavaScript">PrintFooter("UCRL-MI-133316")</script><p></p><hr><span class="footer">https://computing.llnl.gov/tutorials/parallel_comp/<br>Last Modified: 05/05/2018 01:54:23 <a href="mailto:blaiseb@llnl.gov">blaiseb@llnl.gov</a><br>UCRL-MI-133316<p>This work was performed under the auspices of the U.S. Department of Energy by Lawrence Livermore National Laboratory under Contract DE-AC52-07NA27345.
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
